@@ -36,6 +36,9 @@ celerybeat-schedule*
 tmp_resume*/
 *.docx
 docs/node_logo_old.png
-workspace/office/notes.txt
-workspace/office/notes/
+workspace/office/*
+!workspace/office/skills/
+!workspace/office/skills/**
+workspace/office/skills/**/__pycache__/
+workspace/office/skills/**/*.py[cod]
 workspace/mcp_servers.json

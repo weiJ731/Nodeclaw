@@ -7,7 +7,7 @@ from langchain_core.tools import StructuredTool
 from functools import lru_cache
 
 from .config import SKILLS_DIR
-from .tools.sandbox_tools import execute_office_shell
+from .tools.sandbox_tools import execute_dynamic_skill
 
 
 class DynamicSkillInput(BaseModel):
@@ -182,7 +182,7 @@ class LazySkillLoader:
                     return "错误：在 'run' 模式下，必须提供 command 参数！"
                 
                 actual_cmd = command.replace("{baseDir}", f"skills/{skill_info['folder']}")
-                return execute_office_shell.invoke({"command": actual_cmd})
+                return execute_dynamic_skill(actual_cmd, skill_info["folder"])
             else:
                 return "错误：mode 参数只能是 'help' 或 'run'。"
         

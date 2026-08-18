@@ -14,6 +14,7 @@ Nodeclaw 是一个基于 FastAPI、LangGraph 和工具调用构建的多用户 A
 - Celery 按用户串行化记忆写入，不同用户可并行处理
 - Mongo 定时任务、Redis 实时提醒与离线通知
 - 内置工具、动态 Skill、可选 MCP 工具接入
+- Office 文件真实路径校验、只读 Skill 区与 Shell 命令白名单
 - Web 聊天、会话列表、任务面板、Memory/Health Console
 
 ## 架构
@@ -40,7 +41,7 @@ MongoDB 是唯一事实源；Qdrant 可从 MongoDB 重建。`raw_exchanges` 只�
 ## 首次安装
 
 ```bash
-git clone https://github.com/weiJ731/Nodeclaw.git
+git clone git@github.com:weiJ731/Nodeclaw.git
 cd Nodeclaw
 conda create -n nodeclaw python=3.12 -y
 conda activate nodeclaw
@@ -122,6 +123,15 @@ python -m entry.main
 8. 新问题通过 Read Gate 后执行 Dense、中文 Sparse 与 RRF 融合，最多注入 5 条或约 1200 Token。
 
 同一用户的记忆任务通过 Redis 锁串行执行，避免跨会话并发覆盖；不同用户由 Celery 并行处理。索引失败会重试，耗尽后进入 Mongo `dead_letters`，Mongo 中的长期记忆不丢失。
+
+## 工具安全边界
+
+- 文件工具只接受 `workspace/office` 内的相对路径，并拒绝 `..`、绝对路径和符号链接。
+- `workspace/office/skills` 是只读受信任区，Agent 不能写入或修改技能脚本。
+- 通用命令执行使用参数数组与 `shell=False`，只允许 `pwd`、`ls` 和 `echo`。
+- Python 脚本只能通过动态技能的 `run` 阶段执行，并限定为该技能自己的 `skills/<技能名>/scripts/*.py`。
+- 管道、重定向、命令拼接、命令替换、任意解释器代码和非白名单命令会在子进程启动前被拒绝。
+- 子进程使用最小化环境变量、固定工作目录、60 秒超时及输出截断；生产环境仍建议叠加非 Root 容器和网络隔离。
 
 ## 会话与删除语义
 
