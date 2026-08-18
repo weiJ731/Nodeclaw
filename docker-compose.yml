@@ -1,0 +1,80 @@
+services:
+  nodeclaw-mongodb:
+    image: mongo:8.0
+    container_name: nodeclaw-mongodb
+    restart: unless-stopped
+    entrypoint:
+      - bash
+      - -c
+      - |
+        printf '%s' "$$MONGO_REPLICA_KEY" > /tmp/nodeclaw-mongo-keyfile
+        chmod 400 /tmp/nodeclaw-mongo-keyfile
+        chown mongodb:mongodb /tmp/nodeclaw-mongo-keyfile
+        exec /usr/local/bin/docker-entrypoint.sh mongod --replSet rs0 --bind_ip_all --port 27018 --keyFile /tmp/nodeclaw-mongo-keyfile
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: nodeclaw
+      MONGO_INITDB_ROOT_PASSWORD: nodeclaw_password
+      MONGO_REPLICA_KEY: ${MONGO_REPLICA_KEY}
+    ports:
+      - "27018:27018"
+    volumes:
+      - nodeclaw_mongodb_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--host", "localhost", "--port", "27018", "-u", "nodeclaw", "-p", "nodeclaw_password", "--authenticationDatabase", "admin", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  nodeclaw-mongo-init:
+    image: mongo:8.0
+    restart: "no"
+    depends_on:
+      nodeclaw-mongodb:
+        condition: service_healthy
+    entrypoint:
+      - bash
+      - -c
+      - |
+        mongosh 'mongodb://nodeclaw:nodeclaw_password@nodeclaw-mongodb:27018/admin' --eval '
+          const hello = db.adminCommand({hello: 1});
+          if (!hello.setName) {
+            rs.initiate({_id: "rs0", members: [{_id: 0, host: "localhost:27018"}]})
+          } else {
+            printjson({ok: 1, setName: hello.setName})
+          }
+        '
+
+  nodeclaw-qdrant:
+    image: qdrant/qdrant:v1.15.5
+    container_name: nodeclaw-qdrant
+    restart: unless-stopped
+    ports:
+      - "6335:6333"
+      - "6336:6334"
+    volumes:
+      - nodeclaw_qdrant_data:/qdrant/storage
+    healthcheck:
+      test: ["CMD-SHELL", "bash -c '</dev/tcp/127.0.0.1/6333'"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  nodeclaw-redis:
+    image: redis:7.4-alpine
+    container_name: nodeclaw-redis
+    restart: unless-stopped
+    command: ["redis-server", "--appendonly", "yes"]
+    ports:
+      - "6380:6379"
+    volumes:
+      - nodeclaw_redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  nodeclaw_mongodb_data:
+  nodeclaw_qdrant_data:
+  nodeclaw_redis_data:

@@ -1,0 +1,4407 @@
+{
+  "metadata": {
+    "name": "nodeclaw-memory-v3-eval-200",
+    "version": "1.0.0",
+    "language": "zh-CN",
+    "bucket_counts": {
+      "fact_qa": 80,
+      "multi_hop_qa": 60,
+      "business_rule_qa": 60
+    },
+    "metric_contract": {
+      "retrieval": [
+        "recall_at_5",
+        "mrr",
+        "retrieval_latency_p95_ms"
+      ],
+      "generation": [
+        "faithfulness",
+        "response_latency_p95_ms"
+      ]
+    }
+  },
+  "memories": [
+    {
+      "label": "fact-001",
+      "type": "project_context",
+      "summary": "海棠项目的服务端框架是FastAPI。",
+      "facts": [
+        "海棠项目的服务端框架是FastAPI。"
+      ],
+      "keywords": [
+        "海棠",
+        "FastAPI"
+      ]
+    },
+    {
+      "label": "fact-002",
+      "type": "project_context",
+      "summary": "松风项目的服务端框架是Django。",
+      "facts": [
+        "松风项目的服务端框架是Django。"
+      ],
+      "keywords": [
+        "松风",
+        "Django"
+      ]
+    },
+    {
+      "label": "fact-003",
+      "type": "project_context",
+      "summary": "月泉项目的服务端框架是Flask。",
+      "facts": [
+        "月泉项目的服务端框架是Flask。"
+      ],
+      "keywords": [
+        "月泉",
+        "Flask"
+      ]
+    },
+    {
+      "label": "fact-004",
+      "type": "project_context",
+      "summary": "竹影项目的服务端框架是Spring Boot。",
+      "facts": [
+        "竹影项目的服务端框架是Spring Boot。"
+      ],
+      "keywords": [
+        "竹影",
+        "Spring Boot"
+      ]
+    },
+    {
+      "label": "fact-005",
+      "type": "project_context",
+      "summary": "清和项目的服务端框架是NestJS。",
+      "facts": [
+        "清和项目的服务端框架是NestJS。"
+      ],
+      "keywords": [
+        "清和",
+        "NestJS"
+      ]
+    },
+    {
+      "label": "fact-006",
+      "type": "project_context",
+      "summary": "南枝项目的服务端框架是Go Fiber。",
+      "facts": [
+        "南枝项目的服务端框架是Go Fiber。"
+      ],
+      "keywords": [
+        "南枝",
+        "Go Fiber"
+      ]
+    },
+    {
+      "label": "fact-007",
+      "type": "project_context",
+      "summary": "听雨项目的服务端框架是Gin。",
+      "facts": [
+        "听雨项目的服务端框架是Gin。"
+      ],
+      "keywords": [
+        "听雨",
+        "Gin"
+      ]
+    },
+    {
+      "label": "fact-008",
+      "type": "project_context",
+      "summary": "兰台项目的服务端框架是Ktor。",
+      "facts": [
+        "兰台项目的服务端框架是Ktor。"
+      ],
+      "keywords": [
+        "兰台",
+        "Ktor"
+      ]
+    },
+    {
+      "label": "fact-009",
+      "type": "project_context",
+      "summary": "疏影项目的服务端框架是Express。",
+      "facts": [
+        "疏影项目的服务端框架是Express。"
+      ],
+      "keywords": [
+        "疏影",
+        "Express"
+      ]
+    },
+    {
+      "label": "fact-010",
+      "type": "project_context",
+      "summary": "微澜项目的服务端框架是Sanic。",
+      "facts": [
+        "微澜项目的服务端框架是Sanic。"
+      ],
+      "keywords": [
+        "微澜",
+        "Sanic"
+      ]
+    },
+    {
+      "label": "fact-011",
+      "type": "decision",
+      "summary": "海棠项目的主数据库确定为MongoDB。",
+      "facts": [
+        "海棠项目的主数据库确定为MongoDB。"
+      ],
+      "keywords": [
+        "海棠",
+        "MongoDB"
+      ]
+    },
+    {
+      "label": "fact-012",
+      "type": "decision",
+      "summary": "松风项目的主数据库确定为PostgreSQL。",
+      "facts": [
+        "松风项目的主数据库确定为PostgreSQL。"
+      ],
+      "keywords": [
+        "松风",
+        "PostgreSQL"
+      ]
+    },
+    {
+      "label": "fact-013",
+      "type": "decision",
+      "summary": "月泉项目的主数据库确定为MySQL。",
+      "facts": [
+        "月泉项目的主数据库确定为MySQL。"
+      ],
+      "keywords": [
+        "月泉",
+        "MySQL"
+      ]
+    },
+    {
+      "label": "fact-014",
+      "type": "decision",
+      "summary": "竹影项目的主数据库确定为MongoDB。",
+      "facts": [
+        "竹影项目的主数据库确定为MongoDB。"
+      ],
+      "keywords": [
+        "竹影",
+        "MongoDB"
+      ]
+    },
+    {
+      "label": "fact-015",
+      "type": "decision",
+      "summary": "清和项目的主数据库确定为PostgreSQL。",
+      "facts": [
+        "清和项目的主数据库确定为PostgreSQL。"
+      ],
+      "keywords": [
+        "清和",
+        "PostgreSQL"
+      ]
+    },
+    {
+      "label": "fact-016",
+      "type": "decision",
+      "summary": "南枝项目的主数据库确定为MySQL。",
+      "facts": [
+        "南枝项目的主数据库确定为MySQL。"
+      ],
+      "keywords": [
+        "南枝",
+        "MySQL"
+      ]
+    },
+    {
+      "label": "fact-017",
+      "type": "decision",
+      "summary": "听雨项目的主数据库确定为MongoDB。",
+      "facts": [
+        "听雨项目的主数据库确定为MongoDB。"
+      ],
+      "keywords": [
+        "听雨",
+        "MongoDB"
+      ]
+    },
+    {
+      "label": "fact-018",
+      "type": "decision",
+      "summary": "兰台项目的主数据库确定为PostgreSQL。",
+      "facts": [
+        "兰台项目的主数据库确定为PostgreSQL。"
+      ],
+      "keywords": [
+        "兰台",
+        "PostgreSQL"
+      ]
+    },
+    {
+      "label": "fact-019",
+      "type": "decision",
+      "summary": "疏影项目的主数据库确定为MySQL。",
+      "facts": [
+        "疏影项目的主数据库确定为MySQL。"
+      ],
+      "keywords": [
+        "疏影",
+        "MySQL"
+      ]
+    },
+    {
+      "label": "fact-020",
+      "type": "decision",
+      "summary": "微澜项目的主数据库确定为MongoDB。",
+      "facts": [
+        "微澜项目的主数据库确定为MongoDB。"
+      ],
+      "keywords": [
+        "微澜",
+        "MongoDB"
+      ]
+    },
+    {
+      "label": "fact-021",
+      "type": "relationship",
+      "summary": "海棠项目的技术负责人是陈工。",
+      "facts": [
+        "海棠项目的技术负责人是陈工。"
+      ],
+      "keywords": [
+        "海棠",
+        "陈工"
+      ]
+    },
+    {
+      "label": "fact-022",
+      "type": "relationship",
+      "summary": "松风项目的技术负责人是李工。",
+      "facts": [
+        "松风项目的技术负责人是李工。"
+      ],
+      "keywords": [
+        "松风",
+        "李工"
+      ]
+    },
+    {
+      "label": "fact-023",
+      "type": "relationship",
+      "summary": "月泉项目的技术负责人是王工。",
+      "facts": [
+        "月泉项目的技术负责人是王工。"
+      ],
+      "keywords": [
+        "月泉",
+        "王工"
+      ]
+    },
+    {
+      "label": "fact-024",
+      "type": "relationship",
+      "summary": "竹影项目的技术负责人是周工。",
+      "facts": [
+        "竹影项目的技术负责人是周工。"
+      ],
+      "keywords": [
+        "竹影",
+        "周工"
+      ]
+    },
+    {
+      "label": "fact-025",
+      "type": "relationship",
+      "summary": "清和项目的技术负责人是赵工。",
+      "facts": [
+        "清和项目的技术负责人是赵工。"
+      ],
+      "keywords": [
+        "清和",
+        "赵工"
+      ]
+    },
+    {
+      "label": "fact-026",
+      "type": "relationship",
+      "summary": "南枝项目的技术负责人是孙工。",
+      "facts": [
+        "南枝项目的技术负责人是孙工。"
+      ],
+      "keywords": [
+        "南枝",
+        "孙工"
+      ]
+    },
+    {
+      "label": "fact-027",
+      "type": "relationship",
+      "summary": "听雨项目的技术负责人是吴工。",
+      "facts": [
+        "听雨项目的技术负责人是吴工。"
+      ],
+      "keywords": [
+        "听雨",
+        "吴工"
+      ]
+    },
+    {
+      "label": "fact-028",
+      "type": "relationship",
+      "summary": "兰台项目的技术负责人是郑工。",
+      "facts": [
+        "兰台项目的技术负责人是郑工。"
+      ],
+      "keywords": [
+        "兰台",
+        "郑工"
+      ]
+    },
+    {
+      "label": "fact-029",
+      "type": "relationship",
+      "summary": "疏影项目的技术负责人是冯工。",
+      "facts": [
+        "疏影项目的技术负责人是冯工。"
+      ],
+      "keywords": [
+        "疏影",
+        "冯工"
+      ]
+    },
+    {
+      "label": "fact-030",
+      "type": "relationship",
+      "summary": "微澜项目的技术负责人是何工。",
+      "facts": [
+        "微澜项目的技术负责人是何工。"
+      ],
+      "keywords": [
+        "微澜",
+        "何工"
+      ]
+    },
+    {
+      "label": "fact-031",
+      "type": "project_context",
+      "summary": "海棠项目计划在2026年1月15日完成首版交付。",
+      "facts": [
+        "海棠项目计划在2026年1月15日完成首版交付。"
+      ],
+      "keywords": [
+        "海棠",
+        "2026年1月15日"
+      ]
+    },
+    {
+      "label": "fact-032",
+      "type": "project_context",
+      "summary": "松风项目计划在2026年2月15日完成首版交付。",
+      "facts": [
+        "松风项目计划在2026年2月15日完成首版交付。"
+      ],
+      "keywords": [
+        "松风",
+        "2026年2月15日"
+      ]
+    },
+    {
+      "label": "fact-033",
+      "type": "project_context",
+      "summary": "月泉项目计划在2026年3月15日完成首版交付。",
+      "facts": [
+        "月泉项目计划在2026年3月15日完成首版交付。"
+      ],
+      "keywords": [
+        "月泉",
+        "2026年3月15日"
+      ]
+    },
+    {
+      "label": "fact-034",
+      "type": "project_context",
+      "summary": "竹影项目计划在2026年4月15日完成首版交付。",
+      "facts": [
+        "竹影项目计划在2026年4月15日完成首版交付。"
+      ],
+      "keywords": [
+        "竹影",
+        "2026年4月15日"
+      ]
+    },
+    {
+      "label": "fact-035",
+      "type": "project_context",
+      "summary": "清和项目计划在2026年5月15日完成首版交付。",
+      "facts": [
+        "清和项目计划在2026年5月15日完成首版交付。"
+      ],
+      "keywords": [
+        "清和",
+        "2026年5月15日"
+      ]
+    },
+    {
+      "label": "fact-036",
+      "type": "project_context",
+      "summary": "南枝项目计划在2026年6月15日完成首版交付。",
+      "facts": [
+        "南枝项目计划在2026年6月15日完成首版交付。"
+      ],
+      "keywords": [
+        "南枝",
+        "2026年6月15日"
+      ]
+    },
+    {
+      "label": "fact-037",
+      "type": "project_context",
+      "summary": "听雨项目计划在2026年7月15日完成首版交付。",
+      "facts": [
+        "听雨项目计划在2026年7月15日完成首版交付。"
+      ],
+      "keywords": [
+        "听雨",
+        "2026年7月15日"
+      ]
+    },
+    {
+      "label": "fact-038",
+      "type": "project_context",
+      "summary": "兰台项目计划在2026年8月15日完成首版交付。",
+      "facts": [
+        "兰台项目计划在2026年8月15日完成首版交付。"
+      ],
+      "keywords": [
+        "兰台",
+        "2026年8月15日"
+      ]
+    },
+    {
+      "label": "fact-039",
+      "type": "project_context",
+      "summary": "疏影项目计划在2026年9月15日完成首版交付。",
+      "facts": [
+        "疏影项目计划在2026年9月15日完成首版交付。"
+      ],
+      "keywords": [
+        "疏影",
+        "2026年9月15日"
+      ]
+    },
+    {
+      "label": "fact-040",
+      "type": "project_context",
+      "summary": "微澜项目计划在2026年10月15日完成首版交付。",
+      "facts": [
+        "微澜项目计划在2026年10月15日完成首版交付。"
+      ],
+      "keywords": [
+        "微澜",
+        "2026年10月15日"
+      ]
+    },
+    {
+      "label": "fact-041",
+      "type": "constraint",
+      "summary": "海棠项目要求所有接口必须使用JWT鉴权。",
+      "facts": [
+        "海棠项目要求所有接口必须使用JWT鉴权。"
+      ],
+      "keywords": [
+        "海棠",
+        "JWT鉴权"
+      ]
+    },
+    {
+      "label": "fact-042",
+      "type": "constraint",
+      "summary": "松风项目要求所有接口必须使用OAuth 2.0。",
+      "facts": [
+        "松风项目要求所有接口必须使用OAuth 2.0。"
+      ],
+      "keywords": [
+        "松风",
+        "OAuth 2.0"
+      ]
+    },
+    {
+      "label": "fact-043",
+      "type": "constraint",
+      "summary": "月泉项目要求所有接口必须使用双向TLS。",
+      "facts": [
+        "月泉项目要求所有接口必须使用双向TLS。"
+      ],
+      "keywords": [
+        "月泉",
+        "双向TLS"
+      ]
+    },
+    {
+      "label": "fact-044",
+      "type": "constraint",
+      "summary": "竹影项目要求所有接口必须使用API Key签名。",
+      "facts": [
+        "竹影项目要求所有接口必须使用API Key签名。"
+      ],
+      "keywords": [
+        "竹影",
+        "API Key签名"
+      ]
+    },
+    {
+      "label": "fact-045",
+      "type": "constraint",
+      "summary": "清和项目要求所有接口必须使用JWT鉴权。",
+      "facts": [
+        "清和项目要求所有接口必须使用JWT鉴权。"
+      ],
+      "keywords": [
+        "清和",
+        "JWT鉴权"
+      ]
+    },
+    {
+      "label": "fact-046",
+      "type": "constraint",
+      "summary": "南枝项目要求所有接口必须使用OAuth 2.0。",
+      "facts": [
+        "南枝项目要求所有接口必须使用OAuth 2.0。"
+      ],
+      "keywords": [
+        "南枝",
+        "OAuth 2.0"
+      ]
+    },
+    {
+      "label": "fact-047",
+      "type": "constraint",
+      "summary": "听雨项目要求所有接口必须使用双向TLS。",
+      "facts": [
+        "听雨项目要求所有接口必须使用双向TLS。"
+      ],
+      "keywords": [
+        "听雨",
+        "双向TLS"
+      ]
+    },
+    {
+      "label": "fact-048",
+      "type": "constraint",
+      "summary": "兰台项目要求所有接口必须使用API Key签名。",
+      "facts": [
+        "兰台项目要求所有接口必须使用API Key签名。"
+      ],
+      "keywords": [
+        "兰台",
+        "API Key签名"
+      ]
+    },
+    {
+      "label": "fact-049",
+      "type": "constraint",
+      "summary": "疏影项目要求所有接口必须使用JWT鉴权。",
+      "facts": [
+        "疏影项目要求所有接口必须使用JWT鉴权。"
+      ],
+      "keywords": [
+        "疏影",
+        "JWT鉴权"
+      ]
+    },
+    {
+      "label": "fact-050",
+      "type": "constraint",
+      "summary": "微澜项目要求所有接口必须使用OAuth 2.0。",
+      "facts": [
+        "微澜项目要求所有接口必须使用OAuth 2.0。"
+      ],
+      "keywords": [
+        "微澜",
+        "OAuth 2.0"
+      ]
+    },
+    {
+      "label": "fact-051",
+      "type": "project_context",
+      "summary": "海棠项目的主要部署区域是苏州。",
+      "facts": [
+        "海棠项目的主要部署区域是苏州。"
+      ],
+      "keywords": [
+        "海棠",
+        "苏州"
+      ]
+    },
+    {
+      "label": "fact-052",
+      "type": "project_context",
+      "summary": "松风项目的主要部署区域是南京。",
+      "facts": [
+        "松风项目的主要部署区域是南京。"
+      ],
+      "keywords": [
+        "松风",
+        "南京"
+      ]
+    },
+    {
+      "label": "fact-053",
+      "type": "project_context",
+      "summary": "月泉项目的主要部署区域是上海。",
+      "facts": [
+        "月泉项目的主要部署区域是上海。"
+      ],
+      "keywords": [
+        "月泉",
+        "上海"
+      ]
+    },
+    {
+      "label": "fact-054",
+      "type": "project_context",
+      "summary": "竹影项目的主要部署区域是杭州。",
+      "facts": [
+        "竹影项目的主要部署区域是杭州。"
+      ],
+      "keywords": [
+        "竹影",
+        "杭州"
+      ]
+    },
+    {
+      "label": "fact-055",
+      "type": "project_context",
+      "summary": "清和项目的主要部署区域是无锡。",
+      "facts": [
+        "清和项目的主要部署区域是无锡。"
+      ],
+      "keywords": [
+        "清和",
+        "无锡"
+      ]
+    },
+    {
+      "label": "fact-056",
+      "type": "project_context",
+      "summary": "南枝项目的主要部署区域是常州。",
+      "facts": [
+        "南枝项目的主要部署区域是常州。"
+      ],
+      "keywords": [
+        "南枝",
+        "常州"
+      ]
+    },
+    {
+      "label": "fact-057",
+      "type": "project_context",
+      "summary": "听雨项目的主要部署区域是合肥。",
+      "facts": [
+        "听雨项目的主要部署区域是合肥。"
+      ],
+      "keywords": [
+        "听雨",
+        "合肥"
+      ]
+    },
+    {
+      "label": "fact-058",
+      "type": "project_context",
+      "summary": "兰台项目的主要部署区域是武汉。",
+      "facts": [
+        "兰台项目的主要部署区域是武汉。"
+      ],
+      "keywords": [
+        "兰台",
+        "武汉"
+      ]
+    },
+    {
+      "label": "fact-059",
+      "type": "project_context",
+      "summary": "疏影项目的主要部署区域是成都。",
+      "facts": [
+        "疏影项目的主要部署区域是成都。"
+      ],
+      "keywords": [
+        "疏影",
+        "成都"
+      ]
+    },
+    {
+      "label": "fact-060",
+      "type": "project_context",
+      "summary": "微澜项目的主要部署区域是深圳。",
+      "facts": [
+        "微澜项目的主要部署区域是深圳。"
+      ],
+      "keywords": [
+        "微澜",
+        "深圳"
+      ]
+    },
+    {
+      "label": "fact-061",
+      "type": "preference",
+      "summary": "海棠项目的周报偏好使用中文分点。",
+      "facts": [
+        "海棠项目的周报偏好使用中文分点。"
+      ],
+      "keywords": [
+        "海棠",
+        "中文分点"
+      ]
+    },
+    {
+      "label": "fact-062",
+      "type": "preference",
+      "summary": "松风项目的周报偏好使用先给结论。",
+      "facts": [
+        "松风项目的周报偏好使用先给结论。"
+      ],
+      "keywords": [
+        "松风",
+        "先给结论"
+      ]
+    },
+    {
+      "label": "fact-063",
+      "type": "preference",
+      "summary": "月泉项目的周报偏好使用表格汇总。",
+      "facts": [
+        "月泉项目的周报偏好使用表格汇总。"
+      ],
+      "keywords": [
+        "月泉",
+        "表格汇总"
+      ]
+    },
+    {
+      "label": "fact-064",
+      "type": "preference",
+      "summary": "竹影项目的周报偏好使用简洁短句。",
+      "facts": [
+        "竹影项目的周报偏好使用简洁短句。"
+      ],
+      "keywords": [
+        "竹影",
+        "简洁短句"
+      ]
+    },
+    {
+      "label": "fact-065",
+      "type": "preference",
+      "summary": "清和项目的周报偏好使用中文分点。",
+      "facts": [
+        "清和项目的周报偏好使用中文分点。"
+      ],
+      "keywords": [
+        "清和",
+        "中文分点"
+      ]
+    },
+    {
+      "label": "fact-066",
+      "type": "preference",
+      "summary": "南枝项目的周报偏好使用先给结论。",
+      "facts": [
+        "南枝项目的周报偏好使用先给结论。"
+      ],
+      "keywords": [
+        "南枝",
+        "先给结论"
+      ]
+    },
+    {
+      "label": "fact-067",
+      "type": "preference",
+      "summary": "听雨项目的周报偏好使用表格汇总。",
+      "facts": [
+        "听雨项目的周报偏好使用表格汇总。"
+      ],
+      "keywords": [
+        "听雨",
+        "表格汇总"
+      ]
+    },
+    {
+      "label": "fact-068",
+      "type": "preference",
+      "summary": "兰台项目的周报偏好使用简洁短句。",
+      "facts": [
+        "兰台项目的周报偏好使用简洁短句。"
+      ],
+      "keywords": [
+        "兰台",
+        "简洁短句"
+      ]
+    },
+    {
+      "label": "fact-069",
+      "type": "preference",
+      "summary": "疏影项目的周报偏好使用中文分点。",
+      "facts": [
+        "疏影项目的周报偏好使用中文分点。"
+      ],
+      "keywords": [
+        "疏影",
+        "中文分点"
+      ]
+    },
+    {
+      "label": "fact-070",
+      "type": "preference",
+      "summary": "微澜项目的周报偏好使用先给结论。",
+      "facts": [
+        "微澜项目的周报偏好使用先给结论。"
+      ],
+      "keywords": [
+        "微澜",
+        "先给结论"
+      ]
+    },
+    {
+      "label": "fact-071",
+      "type": "long_term_goal",
+      "summary": "海棠项目本季度的核心目标是完成内测。",
+      "facts": [
+        "海棠项目本季度的核心目标是完成内测。"
+      ],
+      "keywords": [
+        "海棠",
+        "完成内测"
+      ]
+    },
+    {
+      "label": "fact-072",
+      "type": "long_term_goal",
+      "summary": "松风项目本季度的核心目标是降低延迟。",
+      "facts": [
+        "松风项目本季度的核心目标是降低延迟。"
+      ],
+      "keywords": [
+        "松风",
+        "降低延迟"
+      ]
+    },
+    {
+      "label": "fact-073",
+      "type": "long_term_goal",
+      "summary": "月泉项目本季度的核心目标是提升召回率。",
+      "facts": [
+        "月泉项目本季度的核心目标是提升召回率。"
+      ],
+      "keywords": [
+        "月泉",
+        "提升召回率"
+      ]
+    },
+    {
+      "label": "fact-074",
+      "type": "long_term_goal",
+      "summary": "竹影项目本季度的核心目标是完成安全审计。",
+      "facts": [
+        "竹影项目本季度的核心目标是完成安全审计。"
+      ],
+      "keywords": [
+        "竹影",
+        "完成安全审计"
+      ]
+    },
+    {
+      "label": "fact-075",
+      "type": "long_term_goal",
+      "summary": "清和项目本季度的核心目标是完成内测。",
+      "facts": [
+        "清和项目本季度的核心目标是完成内测。"
+      ],
+      "keywords": [
+        "清和",
+        "完成内测"
+      ]
+    },
+    {
+      "label": "fact-076",
+      "type": "long_term_goal",
+      "summary": "南枝项目本季度的核心目标是降低延迟。",
+      "facts": [
+        "南枝项目本季度的核心目标是降低延迟。"
+      ],
+      "keywords": [
+        "南枝",
+        "降低延迟"
+      ]
+    },
+    {
+      "label": "fact-077",
+      "type": "long_term_goal",
+      "summary": "听雨项目本季度的核心目标是提升召回率。",
+      "facts": [
+        "听雨项目本季度的核心目标是提升召回率。"
+      ],
+      "keywords": [
+        "听雨",
+        "提升召回率"
+      ]
+    },
+    {
+      "label": "fact-078",
+      "type": "long_term_goal",
+      "summary": "兰台项目本季度的核心目标是完成安全审计。",
+      "facts": [
+        "兰台项目本季度的核心目标是完成安全审计。"
+      ],
+      "keywords": [
+        "兰台",
+        "完成安全审计"
+      ]
+    },
+    {
+      "label": "fact-079",
+      "type": "long_term_goal",
+      "summary": "疏影项目本季度的核心目标是完成内测。",
+      "facts": [
+        "疏影项目本季度的核心目标是完成内测。"
+      ],
+      "keywords": [
+        "疏影",
+        "完成内测"
+      ]
+    },
+    {
+      "label": "fact-080",
+      "type": "long_term_goal",
+      "summary": "微澜项目本季度的核心目标是降低延迟。",
+      "facts": [
+        "微澜项目本季度的核心目标是降低延迟。"
+      ],
+      "keywords": [
+        "微澜",
+        "降低延迟"
+      ]
+    },
+    {
+      "label": "multi-01-owner",
+      "type": "relationship",
+      "summary": "星舟平台由陈工担任技术负责人。",
+      "facts": [
+        "星舟平台由陈工担任技术负责人。"
+      ],
+      "keywords": [
+        "星舟",
+        "陈工"
+      ]
+    },
+    {
+      "label": "multi-01-tech",
+      "type": "project_context",
+      "summary": "星舟平台使用FastAPI构建服务端。",
+      "facts": [
+        "星舟平台使用FastAPI构建服务端。"
+      ],
+      "keywords": [
+        "星舟",
+        "FastAPI"
+      ]
+    },
+    {
+      "label": "multi-01-plan",
+      "type": "project_context",
+      "summary": "星舟平台将在2026年2月9日于苏州完成上线。",
+      "facts": [
+        "星舟平台将在2026年2月9日于苏州完成上线。"
+      ],
+      "keywords": [
+        "星舟",
+        "2026年2月9日",
+        "苏州"
+      ]
+    },
+    {
+      "label": "multi-02-owner",
+      "type": "relationship",
+      "summary": "云桥平台由李工担任技术负责人。",
+      "facts": [
+        "云桥平台由李工担任技术负责人。"
+      ],
+      "keywords": [
+        "云桥",
+        "李工"
+      ]
+    },
+    {
+      "label": "multi-02-tech",
+      "type": "project_context",
+      "summary": "云桥平台使用Django构建服务端。",
+      "facts": [
+        "云桥平台使用Django构建服务端。"
+      ],
+      "keywords": [
+        "云桥",
+        "Django"
+      ]
+    },
+    {
+      "label": "multi-02-plan",
+      "type": "project_context",
+      "summary": "云桥平台将在2026年3月10日于南京完成上线。",
+      "facts": [
+        "云桥平台将在2026年3月10日于南京完成上线。"
+      ],
+      "keywords": [
+        "云桥",
+        "2026年3月10日",
+        "南京"
+      ]
+    },
+    {
+      "label": "multi-03-owner",
+      "type": "relationship",
+      "summary": "青岚平台由王工担任技术负责人。",
+      "facts": [
+        "青岚平台由王工担任技术负责人。"
+      ],
+      "keywords": [
+        "青岚",
+        "王工"
+      ]
+    },
+    {
+      "label": "multi-03-tech",
+      "type": "project_context",
+      "summary": "青岚平台使用Flask构建服务端。",
+      "facts": [
+        "青岚平台使用Flask构建服务端。"
+      ],
+      "keywords": [
+        "青岚",
+        "Flask"
+      ]
+    },
+    {
+      "label": "multi-03-plan",
+      "type": "project_context",
+      "summary": "青岚平台将在2026年4月11日于上海完成上线。",
+      "facts": [
+        "青岚平台将在2026年4月11日于上海完成上线。"
+      ],
+      "keywords": [
+        "青岚",
+        "2026年4月11日",
+        "上海"
+      ]
+    },
+    {
+      "label": "multi-04-owner",
+      "type": "relationship",
+      "summary": "远帆平台由周工担任技术负责人。",
+      "facts": [
+        "远帆平台由周工担任技术负责人。"
+      ],
+      "keywords": [
+        "远帆",
+        "周工"
+      ]
+    },
+    {
+      "label": "multi-04-tech",
+      "type": "project_context",
+      "summary": "远帆平台使用Spring Boot构建服务端。",
+      "facts": [
+        "远帆平台使用Spring Boot构建服务端。"
+      ],
+      "keywords": [
+        "远帆",
+        "Spring Boot"
+      ]
+    },
+    {
+      "label": "multi-04-plan",
+      "type": "project_context",
+      "summary": "远帆平台将在2026年5月12日于杭州完成上线。",
+      "facts": [
+        "远帆平台将在2026年5月12日于杭州完成上线。"
+      ],
+      "keywords": [
+        "远帆",
+        "2026年5月12日",
+        "杭州"
+      ]
+    },
+    {
+      "label": "multi-05-owner",
+      "type": "relationship",
+      "summary": "晨曦平台由赵工担任技术负责人。",
+      "facts": [
+        "晨曦平台由赵工担任技术负责人。"
+      ],
+      "keywords": [
+        "晨曦",
+        "赵工"
+      ]
+    },
+    {
+      "label": "multi-05-tech",
+      "type": "project_context",
+      "summary": "晨曦平台使用NestJS构建服务端。",
+      "facts": [
+        "晨曦平台使用NestJS构建服务端。"
+      ],
+      "keywords": [
+        "晨曦",
+        "NestJS"
+      ]
+    },
+    {
+      "label": "multi-05-plan",
+      "type": "project_context",
+      "summary": "晨曦平台将在2026年6月13日于无锡完成上线。",
+      "facts": [
+        "晨曦平台将在2026年6月13日于无锡完成上线。"
+      ],
+      "keywords": [
+        "晨曦",
+        "2026年6月13日",
+        "无锡"
+      ]
+    },
+    {
+      "label": "multi-06-owner",
+      "type": "relationship",
+      "summary": "灵犀平台由孙工担任技术负责人。",
+      "facts": [
+        "灵犀平台由孙工担任技术负责人。"
+      ],
+      "keywords": [
+        "灵犀",
+        "孙工"
+      ]
+    },
+    {
+      "label": "multi-06-tech",
+      "type": "project_context",
+      "summary": "灵犀平台使用Go Fiber构建服务端。",
+      "facts": [
+        "灵犀平台使用Go Fiber构建服务端。"
+      ],
+      "keywords": [
+        "灵犀",
+        "Go Fiber"
+      ]
+    },
+    {
+      "label": "multi-06-plan",
+      "type": "project_context",
+      "summary": "灵犀平台将在2026年7月14日于常州完成上线。",
+      "facts": [
+        "灵犀平台将在2026年7月14日于常州完成上线。"
+      ],
+      "keywords": [
+        "灵犀",
+        "2026年7月14日",
+        "常州"
+      ]
+    },
+    {
+      "label": "multi-07-owner",
+      "type": "relationship",
+      "summary": "天穹平台由吴工担任技术负责人。",
+      "facts": [
+        "天穹平台由吴工担任技术负责人。"
+      ],
+      "keywords": [
+        "天穹",
+        "吴工"
+      ]
+    },
+    {
+      "label": "multi-07-tech",
+      "type": "project_context",
+      "summary": "天穹平台使用Gin构建服务端。",
+      "facts": [
+        "天穹平台使用Gin构建服务端。"
+      ],
+      "keywords": [
+        "天穹",
+        "Gin"
+      ]
+    },
+    {
+      "label": "multi-07-plan",
+      "type": "project_context",
+      "summary": "天穹平台将在2026年8月15日于合肥完成上线。",
+      "facts": [
+        "天穹平台将在2026年8月15日于合肥完成上线。"
+      ],
+      "keywords": [
+        "天穹",
+        "2026年8月15日",
+        "合肥"
+      ]
+    },
+    {
+      "label": "multi-08-owner",
+      "type": "relationship",
+      "summary": "北辰平台由郑工担任技术负责人。",
+      "facts": [
+        "北辰平台由郑工担任技术负责人。"
+      ],
+      "keywords": [
+        "北辰",
+        "郑工"
+      ]
+    },
+    {
+      "label": "multi-08-tech",
+      "type": "project_context",
+      "summary": "北辰平台使用Ktor构建服务端。",
+      "facts": [
+        "北辰平台使用Ktor构建服务端。"
+      ],
+      "keywords": [
+        "北辰",
+        "Ktor"
+      ]
+    },
+    {
+      "label": "multi-08-plan",
+      "type": "project_context",
+      "summary": "北辰平台将在2026年9月16日于武汉完成上线。",
+      "facts": [
+        "北辰平台将在2026年9月16日于武汉完成上线。"
+      ],
+      "keywords": [
+        "北辰",
+        "2026年9月16日",
+        "武汉"
+      ]
+    },
+    {
+      "label": "multi-09-owner",
+      "type": "relationship",
+      "summary": "流光平台由冯工担任技术负责人。",
+      "facts": [
+        "流光平台由冯工担任技术负责人。"
+      ],
+      "keywords": [
+        "流光",
+        "冯工"
+      ]
+    },
+    {
+      "label": "multi-09-tech",
+      "type": "project_context",
+      "summary": "流光平台使用Express构建服务端。",
+      "facts": [
+        "流光平台使用Express构建服务端。"
+      ],
+      "keywords": [
+        "流光",
+        "Express"
+      ]
+    },
+    {
+      "label": "multi-09-plan",
+      "type": "project_context",
+      "summary": "流光平台将在2026年10月17日于成都完成上线。",
+      "facts": [
+        "流光平台将在2026年10月17日于成都完成上线。"
+      ],
+      "keywords": [
+        "流光",
+        "2026年10月17日",
+        "成都"
+      ]
+    },
+    {
+      "label": "multi-10-owner",
+      "type": "relationship",
+      "summary": "山海平台由何工担任技术负责人。",
+      "facts": [
+        "山海平台由何工担任技术负责人。"
+      ],
+      "keywords": [
+        "山海",
+        "何工"
+      ]
+    },
+    {
+      "label": "multi-10-tech",
+      "type": "project_context",
+      "summary": "山海平台使用Sanic构建服务端。",
+      "facts": [
+        "山海平台使用Sanic构建服务端。"
+      ],
+      "keywords": [
+        "山海",
+        "Sanic"
+      ]
+    },
+    {
+      "label": "multi-10-plan",
+      "type": "project_context",
+      "summary": "山海平台将在2026年11月18日于深圳完成上线。",
+      "facts": [
+        "山海平台将在2026年11月18日于深圳完成上线。"
+      ],
+      "keywords": [
+        "山海",
+        "2026年11月18日",
+        "深圳"
+      ]
+    },
+    {
+      "label": "multi-11-owner",
+      "type": "relationship",
+      "summary": "启明平台由郭工担任技术负责人。",
+      "facts": [
+        "启明平台由郭工担任技术负责人。"
+      ],
+      "keywords": [
+        "启明",
+        "郭工"
+      ]
+    },
+    {
+      "label": "multi-11-tech",
+      "type": "project_context",
+      "summary": "启明平台使用FastAPI构建服务端。",
+      "facts": [
+        "启明平台使用FastAPI构建服务端。"
+      ],
+      "keywords": [
+        "启明",
+        "FastAPI"
+      ]
+    },
+    {
+      "label": "multi-11-plan",
+      "type": "project_context",
+      "summary": "启明平台将在2026年12月19日于北京完成上线。",
+      "facts": [
+        "启明平台将在2026年12月19日于北京完成上线。"
+      ],
+      "keywords": [
+        "启明",
+        "2026年12月19日",
+        "北京"
+      ]
+    },
+    {
+      "label": "multi-12-owner",
+      "type": "relationship",
+      "summary": "知微平台由林工担任技术负责人。",
+      "facts": [
+        "知微平台由林工担任技术负责人。"
+      ],
+      "keywords": [
+        "知微",
+        "林工"
+      ]
+    },
+    {
+      "label": "multi-12-tech",
+      "type": "project_context",
+      "summary": "知微平台使用Django构建服务端。",
+      "facts": [
+        "知微平台使用Django构建服务端。"
+      ],
+      "keywords": [
+        "知微",
+        "Django"
+      ]
+    },
+    {
+      "label": "multi-12-plan",
+      "type": "project_context",
+      "summary": "知微平台将在2026年1月20日于天津完成上线。",
+      "facts": [
+        "知微平台将在2026年1月20日于天津完成上线。"
+      ],
+      "keywords": [
+        "知微",
+        "2026年1月20日",
+        "天津"
+      ]
+    },
+    {
+      "label": "multi-13-owner",
+      "type": "relationship",
+      "summary": "沧澜平台由高工担任技术负责人。",
+      "facts": [
+        "沧澜平台由高工担任技术负责人。"
+      ],
+      "keywords": [
+        "沧澜",
+        "高工"
+      ]
+    },
+    {
+      "label": "multi-13-tech",
+      "type": "project_context",
+      "summary": "沧澜平台使用Flask构建服务端。",
+      "facts": [
+        "沧澜平台使用Flask构建服务端。"
+      ],
+      "keywords": [
+        "沧澜",
+        "Flask"
+      ]
+    },
+    {
+      "label": "multi-13-plan",
+      "type": "project_context",
+      "summary": "沧澜平台将在2026年2月21日于重庆完成上线。",
+      "facts": [
+        "沧澜平台将在2026年2月21日于重庆完成上线。"
+      ],
+      "keywords": [
+        "沧澜",
+        "2026年2月21日",
+        "重庆"
+      ]
+    },
+    {
+      "label": "multi-14-owner",
+      "type": "relationship",
+      "summary": "望舒平台由罗工担任技术负责人。",
+      "facts": [
+        "望舒平台由罗工担任技术负责人。"
+      ],
+      "keywords": [
+        "望舒",
+        "罗工"
+      ]
+    },
+    {
+      "label": "multi-14-tech",
+      "type": "project_context",
+      "summary": "望舒平台使用Spring Boot构建服务端。",
+      "facts": [
+        "望舒平台使用Spring Boot构建服务端。"
+      ],
+      "keywords": [
+        "望舒",
+        "Spring Boot"
+      ]
+    },
+    {
+      "label": "multi-14-plan",
+      "type": "project_context",
+      "summary": "望舒平台将在2026年3月22日于西安完成上线。",
+      "facts": [
+        "望舒平台将在2026年3月22日于西安完成上线。"
+      ],
+      "keywords": [
+        "望舒",
+        "2026年3月22日",
+        "西安"
+      ]
+    },
+    {
+      "label": "multi-15-owner",
+      "type": "relationship",
+      "summary": "玄鸟平台由宋工担任技术负责人。",
+      "facts": [
+        "玄鸟平台由宋工担任技术负责人。"
+      ],
+      "keywords": [
+        "玄鸟",
+        "宋工"
+      ]
+    },
+    {
+      "label": "multi-15-tech",
+      "type": "project_context",
+      "summary": "玄鸟平台使用NestJS构建服务端。",
+      "facts": [
+        "玄鸟平台使用NestJS构建服务端。"
+      ],
+      "keywords": [
+        "玄鸟",
+        "NestJS"
+      ]
+    },
+    {
+      "label": "multi-15-plan",
+      "type": "project_context",
+      "summary": "玄鸟平台将在2026年4月23日于长沙完成上线。",
+      "facts": [
+        "玄鸟平台将在2026年4月23日于长沙完成上线。"
+      ],
+      "keywords": [
+        "玄鸟",
+        "2026年4月23日",
+        "长沙"
+      ]
+    },
+    {
+      "label": "multi-16-owner",
+      "type": "relationship",
+      "summary": "赤霄平台由谢工担任技术负责人。",
+      "facts": [
+        "赤霄平台由谢工担任技术负责人。"
+      ],
+      "keywords": [
+        "赤霄",
+        "谢工"
+      ]
+    },
+    {
+      "label": "multi-16-tech",
+      "type": "project_context",
+      "summary": "赤霄平台使用Go Fiber构建服务端。",
+      "facts": [
+        "赤霄平台使用Go Fiber构建服务端。"
+      ],
+      "keywords": [
+        "赤霄",
+        "Go Fiber"
+      ]
+    },
+    {
+      "label": "multi-16-plan",
+      "type": "project_context",
+      "summary": "赤霄平台将在2026年5月24日于青岛完成上线。",
+      "facts": [
+        "赤霄平台将在2026年5月24日于青岛完成上线。"
+      ],
+      "keywords": [
+        "赤霄",
+        "2026年5月24日",
+        "青岛"
+      ]
+    },
+    {
+      "label": "multi-17-owner",
+      "type": "relationship",
+      "summary": "白泽平台由唐工担任技术负责人。",
+      "facts": [
+        "白泽平台由唐工担任技术负责人。"
+      ],
+      "keywords": [
+        "白泽",
+        "唐工"
+      ]
+    },
+    {
+      "label": "multi-17-tech",
+      "type": "project_context",
+      "summary": "白泽平台使用Gin构建服务端。",
+      "facts": [
+        "白泽平台使用Gin构建服务端。"
+      ],
+      "keywords": [
+        "白泽",
+        "Gin"
+      ]
+    },
+    {
+      "label": "multi-17-plan",
+      "type": "project_context",
+      "summary": "白泽平台将在2026年6月25日于厦门完成上线。",
+      "facts": [
+        "白泽平台将在2026年6月25日于厦门完成上线。"
+      ],
+      "keywords": [
+        "白泽",
+        "2026年6月25日",
+        "厦门"
+      ]
+    },
+    {
+      "label": "multi-18-owner",
+      "type": "relationship",
+      "summary": "扶摇平台由韩工担任技术负责人。",
+      "facts": [
+        "扶摇平台由韩工担任技术负责人。"
+      ],
+      "keywords": [
+        "扶摇",
+        "韩工"
+      ]
+    },
+    {
+      "label": "multi-18-tech",
+      "type": "project_context",
+      "summary": "扶摇平台使用Ktor构建服务端。",
+      "facts": [
+        "扶摇平台使用Ktor构建服务端。"
+      ],
+      "keywords": [
+        "扶摇",
+        "Ktor"
+      ]
+    },
+    {
+      "label": "multi-18-plan",
+      "type": "project_context",
+      "summary": "扶摇平台将在2026年7月26日于宁波完成上线。",
+      "facts": [
+        "扶摇平台将在2026年7月26日于宁波完成上线。"
+      ],
+      "keywords": [
+        "扶摇",
+        "2026年7月26日",
+        "宁波"
+      ]
+    },
+    {
+      "label": "multi-19-owner",
+      "type": "relationship",
+      "summary": "长风平台由曹工担任技术负责人。",
+      "facts": [
+        "长风平台由曹工担任技术负责人。"
+      ],
+      "keywords": [
+        "长风",
+        "曹工"
+      ]
+    },
+    {
+      "label": "multi-19-tech",
+      "type": "project_context",
+      "summary": "长风平台使用Express构建服务端。",
+      "facts": [
+        "长风平台使用Express构建服务端。"
+      ],
+      "keywords": [
+        "长风",
+        "Express"
+      ]
+    },
+    {
+      "label": "multi-19-plan",
+      "type": "project_context",
+      "summary": "长风平台将在2026年8月27日于济南完成上线。",
+      "facts": [
+        "长风平台将在2026年8月27日于济南完成上线。"
+      ],
+      "keywords": [
+        "长风",
+        "2026年8月27日",
+        "济南"
+      ]
+    },
+    {
+      "label": "multi-20-owner",
+      "type": "relationship",
+      "summary": "归鸿平台由许工担任技术负责人。",
+      "facts": [
+        "归鸿平台由许工担任技术负责人。"
+      ],
+      "keywords": [
+        "归鸿",
+        "许工"
+      ]
+    },
+    {
+      "label": "multi-20-tech",
+      "type": "project_context",
+      "summary": "归鸿平台使用Sanic构建服务端。",
+      "facts": [
+        "归鸿平台使用Sanic构建服务端。"
+      ],
+      "keywords": [
+        "归鸿",
+        "Sanic"
+      ]
+    },
+    {
+      "label": "multi-20-plan",
+      "type": "project_context",
+      "summary": "归鸿平台将在2026年9月8日于福州完成上线。",
+      "facts": [
+        "归鸿平台将在2026年9月8日于福州完成上线。"
+      ],
+      "keywords": [
+        "归鸿",
+        "2026年9月8日",
+        "福州"
+      ]
+    },
+    {
+      "label": "rule-01-amount",
+      "type": "constraint",
+      "summary": "POL-01规定：采购金额不超过3500元由组长审批，超过3500元由业务总监审批。",
+      "facts": [
+        "POL-01规定：采购金额不超过3500元由组长审批，超过3500元由业务总监审批。"
+      ],
+      "keywords": [
+        "POL-01",
+        "3500",
+        "业务总监"
+      ]
+    },
+    {
+      "label": "rule-01-urgent",
+      "type": "constraint",
+      "summary": "POL-01规定：紧急采购仍须至少提供3家供应商报价。",
+      "facts": [
+        "POL-01规定：紧急采购仍须至少提供3家供应商报价。"
+      ],
+      "keywords": [
+        "POL-01",
+        "3",
+        "紧急采购"
+      ]
+    },
+    {
+      "label": "rule-01-invoice",
+      "type": "constraint",
+      "summary": "POL-01规定：采购完成后须在6个自然日内提交发票，逾期需要补充说明。",
+      "facts": [
+        "POL-01规定：采购完成后须在6个自然日内提交发票，逾期需要补充说明。"
+      ],
+      "keywords": [
+        "POL-01",
+        "6",
+        "发票"
+      ]
+    },
+    {
+      "label": "rule-02-amount",
+      "type": "constraint",
+      "summary": "POL-02规定：采购金额不超过4000元由组长审批，超过4000元由财务负责人审批。",
+      "facts": [
+        "POL-02规定：采购金额不超过4000元由组长审批，超过4000元由财务负责人审批。"
+      ],
+      "keywords": [
+        "POL-02",
+        "4000",
+        "财务负责人"
+      ]
+    },
+    {
+      "label": "rule-02-urgent",
+      "type": "constraint",
+      "summary": "POL-02规定：紧急采购仍须至少提供4家供应商报价。",
+      "facts": [
+        "POL-02规定：紧急采购仍须至少提供4家供应商报价。"
+      ],
+      "keywords": [
+        "POL-02",
+        "4",
+        "紧急采购"
+      ]
+    },
+    {
+      "label": "rule-02-invoice",
+      "type": "constraint",
+      "summary": "POL-02规定：采购完成后须在7个自然日内提交发票，逾期需要补充说明。",
+      "facts": [
+        "POL-02规定：采购完成后须在7个自然日内提交发票，逾期需要补充说明。"
+      ],
+      "keywords": [
+        "POL-02",
+        "7",
+        "发票"
+      ]
+    },
+    {
+      "label": "rule-03-amount",
+      "type": "constraint",
+      "summary": "POL-03规定：采购金额不超过4500元由组长审批，超过4500元由采购负责人审批。",
+      "facts": [
+        "POL-03规定：采购金额不超过4500元由组长审批，超过4500元由采购负责人审批。"
+      ],
+      "keywords": [
+        "POL-03",
+        "4500",
+        "采购负责人"
+      ]
+    },
+    {
+      "label": "rule-03-urgent",
+      "type": "constraint",
+      "summary": "POL-03规定：紧急采购仍须至少提供2家供应商报价。",
+      "facts": [
+        "POL-03规定：紧急采购仍须至少提供2家供应商报价。"
+      ],
+      "keywords": [
+        "POL-03",
+        "2",
+        "紧急采购"
+      ]
+    },
+    {
+      "label": "rule-03-invoice",
+      "type": "constraint",
+      "summary": "POL-03规定：采购完成后须在8个自然日内提交发票，逾期需要补充说明。",
+      "facts": [
+        "POL-03规定：采购完成后须在8个自然日内提交发票，逾期需要补充说明。"
+      ],
+      "keywords": [
+        "POL-03",
+        "8",
+        "发票"
+      ]
+    },
+    {
+      "label": "rule-04-amount",
+      "type": "constraint",
+      "summary": "POL-04规定：采购金额不超过5000元由组长审批，超过5000元由部门经理审批。",
+      "facts": [
+        "POL-04规定：采购金额不超过5000元由组长审批，超过5000元由部门经理审批。"
+      ],
+      "keywords": [
+        "POL-04",
+        "5000",
+        "部门经理"
+      ]
+    },
+    {
+      "label": "rule-04-urgent",
+      "type": "constraint",
+      "summary": "POL-04规定：紧急采购仍须至少提供3家供应商报价。",
+      "facts": [
+        "POL-04规定：紧急采购仍须至少提供3家供应商报价。"
+      ],
+      "keywords": [
+        "POL-04",
+        "3",
+        "紧急采购"
+      ]
+    },
+    {
+      "label": "rule-04-invoice",
+      "type": "constraint",
+      "summary": "POL-04规定：采购完成后须在9个自然日内提交发票，逾期需要补充说明。",
+      "facts": [
+        "POL-04规定：采购完成后须在9个自然日内提交发票，逾期需要补充说明。"
+      ],
+      "keywords": [
+        "POL-04",
+        "9",
+        "发票"
+      ]
+    },
+    {
+      "label": "rule-05-amount",
+      "type": "constraint",
+      "summary": "POL-05规定：采购金额不超过5500元由组长审批，超过5500元由业务总监审批。",
+      "facts": [
+        "POL-05规定：采购金额不超过5500元由组长审批，超过5500元由业务总监审批。"
+      ],
+      "keywords": [
+        "POL-05",
+        "5500",
+        "业务总监"
+      ]
+    },
+    {
+      "label": "rule-05-urgent",
+      "type": "constraint",
+      "summary": "POL-05规定：紧急采购仍须至少提供4家供应商报价。",
+      "facts": [
+        "POL-05规定：紧急采购仍须至少提供4家供应商报价。"
+      ],
+      "keywords": [
+        "POL-05",
+        "4",
+        "紧急采购"
+      ]
+    },
+    {
+      "label": "rule-05-invoice",
+      "type": "constraint",
+      "summary": "POL-05规定：采购完成后须在10个自然日内提交发票，逾期需要补充说明。",
+      "facts": [
+        "POL-05规定：采购完成后须在10个自然日内提交发票，逾期需要补充说明。"
+      ],
+      "keywords": [
+        "POL-05",
+        "10",
+        "发票"
+      ]
+    },
+    {
+      "label": "rule-06-amount",
+      "type": "constraint",
+      "summary": "POL-06规定：采购金额不超过6000元由组长审批，超过6000元由财务负责人审批。",
+      "facts": [
+        "POL-06规定：采购金额不超过6000元由组长审批，超过6000元由财务负责人审批。"
+      ],
+      "keywords": [
+        "POL-06",
+        "6000",
+        "财务负责人"
+      ]
+    },
+    {
+      "label": "rule-06-urgent",
+      "type": "constraint",
+      "summary": "POL-06规定：紧急采购仍须至少提供2家供应商报价。",
+      "facts": [
+        "POL-06规定：紧急采购仍须至少提供2家供应商报价。"
+      ],
+      "keywords": [
+        "POL-06",
+        "2",
+        "紧急采购"
+      ]
+    },
+    {
+      "label": "rule-06-invoice",
+      "type": "constraint",
+      "summary": "POL-06规定：采购完成后须在5个自然日内提交发票，逾期需要补充说明。",
+      "facts": [
+        "POL-06规定：采购完成后须在5个自然日内提交发票，逾期需要补充说明。"
+      ],
+      "keywords": [
+        "POL-06",
+        "5",
+        "发票"
+      ]
+    },
+    {
+      "label": "rule-07-amount",
+      "type": "constraint",
+      "summary": "POL-07规定：采购金额不超过6500元由组长审批，超过6500元由采购负责人审批。",
+      "facts": [
+        "POL-07规定：采购金额不超过6500元由组长审批，超过6500元由采购负责人审批。"
+      ],
+      "keywords": [
+        "POL-07",
+        "6500",
+        "采购负责人"
+      ]
+    },
+    {
+      "label": "rule-07-urgent",
+      "type": "constraint",
+      "summary": "POL-07规定：紧急采购仍须至少提供3家供应商报价。",
+      "facts": [
+        "POL-07规定：紧急采购仍须至少提供3家供应商报价。"
+      ],
+      "keywords": [
+        "POL-07",
+        "3",
+        "紧急采购"
+      ]
+    },
+    {
+      "label": "rule-07-invoice",
+      "type": "constraint",
+      "summary": "POL-07规定：采购完成后须在6个自然日内提交发票，逾期需要补充说明。",
+      "facts": [
+        "POL-07规定：采购完成后须在6个自然日内提交发票，逾期需要补充说明。"
+      ],
+      "keywords": [
+        "POL-07",
+        "6",
+        "发票"
+      ]
+    },
+    {
+      "label": "rule-08-amount",
+      "type": "constraint",
+      "summary": "POL-08规定：采购金额不超过7000元由组长审批，超过7000元由部门经理审批。",
+      "facts": [
+        "POL-08规定：采购金额不超过7000元由组长审批，超过7000元由部门经理审批。"
+      ],
+      "keywords": [
+        "POL-08",
+        "7000",
+        "部门经理"
+      ]
+    },
+    {
+      "label": "rule-08-urgent",
+      "type": "constraint",
+      "summary": "POL-08规定：紧急采购仍须至少提供4家供应商报价。",
+      "facts": [
+        "POL-08规定：紧急采购仍须至少提供4家供应商报价。"
+      ],
+      "keywords": [
+        "POL-08",
+        "4",
+        "紧急采购"
+      ]
+    },
+    {
+      "label": "rule-08-invoice",
+      "type": "constraint",
+      "summary": "POL-08规定：采购完成后须在7个自然日内提交发票，逾期需要补充说明。",
+      "facts": [
+        "POL-08规定：采购完成后须在7个自然日内提交发票，逾期需要补充说明。"
+      ],
+      "keywords": [
+        "POL-08",
+        "7",
+        "发票"
+      ]
+    },
+    {
+      "label": "rule-09-amount",
+      "type": "constraint",
+      "summary": "POL-09规定：采购金额不超过7500元由组长审批，超过7500元由业务总监审批。",
+      "facts": [
+        "POL-09规定：采购金额不超过7500元由组长审批，超过7500元由业务总监审批。"
+      ],
+      "keywords": [
+        "POL-09",
+        "7500",
+        "业务总监"
+      ]
+    },
+    {
+      "label": "rule-09-urgent",
+      "type": "constraint",
+      "summary": "POL-09规定：紧急采购仍须至少提供2家供应商报价。",
+      "facts": [
+        "POL-09规定：紧急采购仍须至少提供2家供应商报价。"
+      ],
+      "keywords": [
+        "POL-09",
+        "2",
+        "紧急采购"
+      ]
+    },
+    {
+      "label": "rule-09-invoice",
+      "type": "constraint",
+      "summary": "POL-09规定：采购完成后须在8个自然日内提交发票，逾期需要补充说明。",
+      "facts": [
+        "POL-09规定：采购完成后须在8个自然日内提交发票，逾期需要补充说明。"
+      ],
+      "keywords": [
+        "POL-09",
+        "8",
+        "发票"
+      ]
+    },
+    {
+      "label": "rule-10-amount",
+      "type": "constraint",
+      "summary": "POL-10规定：采购金额不超过8000元由组长审批，超过8000元由财务负责人审批。",
+      "facts": [
+        "POL-10规定：采购金额不超过8000元由组长审批，超过8000元由财务负责人审批。"
+      ],
+      "keywords": [
+        "POL-10",
+        "8000",
+        "财务负责人"
+      ]
+    },
+    {
+      "label": "rule-10-urgent",
+      "type": "constraint",
+      "summary": "POL-10规定：紧急采购仍须至少提供3家供应商报价。",
+      "facts": [
+        "POL-10规定：紧急采购仍须至少提供3家供应商报价。"
+      ],
+      "keywords": [
+        "POL-10",
+        "3",
+        "紧急采购"
+      ]
+    },
+    {
+      "label": "rule-10-invoice",
+      "type": "constraint",
+      "summary": "POL-10规定：采购完成后须在9个自然日内提交发票，逾期需要补充说明。",
+      "facts": [
+        "POL-10规定：采购完成后须在9个自然日内提交发票，逾期需要补充说明。"
+      ],
+      "keywords": [
+        "POL-10",
+        "9",
+        "发票"
+      ]
+    },
+    {
+      "label": "rule-11-amount",
+      "type": "constraint",
+      "summary": "POL-11规定：采购金额不超过8500元由组长审批，超过8500元由采购负责人审批。",
+      "facts": [
+        "POL-11规定：采购金额不超过8500元由组长审批，超过8500元由采购负责人审批。"
+      ],
+      "keywords": [
+        "POL-11",
+        "8500",
+        "采购负责人"
+      ]
+    },
+    {
+      "label": "rule-11-urgent",
+      "type": "constraint",
+      "summary": "POL-11规定：紧急采购仍须至少提供4家供应商报价。",
+      "facts": [
+        "POL-11规定：紧急采购仍须至少提供4家供应商报价。"
+      ],
+      "keywords": [
+        "POL-11",
+        "4",
+        "紧急采购"
+      ]
+    },
+    {
+      "label": "rule-11-invoice",
+      "type": "constraint",
+      "summary": "POL-11规定：采购完成后须在10个自然日内提交发票，逾期需要补充说明。",
+      "facts": [
+        "POL-11规定：采购完成后须在10个自然日内提交发票，逾期需要补充说明。"
+      ],
+      "keywords": [
+        "POL-11",
+        "10",
+        "发票"
+      ]
+    },
+    {
+      "label": "rule-12-amount",
+      "type": "constraint",
+      "summary": "POL-12规定：采购金额不超过9000元由组长审批，超过9000元由部门经理审批。",
+      "facts": [
+        "POL-12规定：采购金额不超过9000元由组长审批，超过9000元由部门经理审批。"
+      ],
+      "keywords": [
+        "POL-12",
+        "9000",
+        "部门经理"
+      ]
+    },
+    {
+      "label": "rule-12-urgent",
+      "type": "constraint",
+      "summary": "POL-12规定：紧急采购仍须至少提供2家供应商报价。",
+      "facts": [
+        "POL-12规定：紧急采购仍须至少提供2家供应商报价。"
+      ],
+      "keywords": [
+        "POL-12",
+        "2",
+        "紧急采购"
+      ]
+    },
+    {
+      "label": "rule-12-invoice",
+      "type": "constraint",
+      "summary": "POL-12规定：采购完成后须在5个自然日内提交发票，逾期需要补充说明。",
+      "facts": [
+        "POL-12规定：采购完成后须在5个自然日内提交发票，逾期需要补充说明。"
+      ],
+      "keywords": [
+        "POL-12",
+        "5",
+        "发票"
+      ]
+    },
+    {
+      "label": "rule-13-amount",
+      "type": "constraint",
+      "summary": "POL-13规定：采购金额不超过9500元由组长审批，超过9500元由业务总监审批。",
+      "facts": [
+        "POL-13规定：采购金额不超过9500元由组长审批，超过9500元由业务总监审批。"
+      ],
+      "keywords": [
+        "POL-13",
+        "9500",
+        "业务总监"
+      ]
+    },
+    {
+      "label": "rule-13-urgent",
+      "type": "constraint",
+      "summary": "POL-13规定：紧急采购仍须至少提供3家供应商报价。",
+      "facts": [
+        "POL-13规定：紧急采购仍须至少提供3家供应商报价。"
+      ],
+      "keywords": [
+        "POL-13",
+        "3",
+        "紧急采购"
+      ]
+    },
+    {
+      "label": "rule-13-invoice",
+      "type": "constraint",
+      "summary": "POL-13规定：采购完成后须在6个自然日内提交发票，逾期需要补充说明。",
+      "facts": [
+        "POL-13规定：采购完成后须在6个自然日内提交发票，逾期需要补充说明。"
+      ],
+      "keywords": [
+        "POL-13",
+        "6",
+        "发票"
+      ]
+    },
+    {
+      "label": "rule-14-amount",
+      "type": "constraint",
+      "summary": "POL-14规定：采购金额不超过10000元由组长审批，超过10000元由财务负责人审批。",
+      "facts": [
+        "POL-14规定：采购金额不超过10000元由组长审批，超过10000元由财务负责人审批。"
+      ],
+      "keywords": [
+        "POL-14",
+        "10000",
+        "财务负责人"
+      ]
+    },
+    {
+      "label": "rule-14-urgent",
+      "type": "constraint",
+      "summary": "POL-14规定：紧急采购仍须至少提供4家供应商报价。",
+      "facts": [
+        "POL-14规定：紧急采购仍须至少提供4家供应商报价。"
+      ],
+      "keywords": [
+        "POL-14",
+        "4",
+        "紧急采购"
+      ]
+    },
+    {
+      "label": "rule-14-invoice",
+      "type": "constraint",
+      "summary": "POL-14规定：采购完成后须在7个自然日内提交发票，逾期需要补充说明。",
+      "facts": [
+        "POL-14规定：采购完成后须在7个自然日内提交发票，逾期需要补充说明。"
+      ],
+      "keywords": [
+        "POL-14",
+        "7",
+        "发票"
+      ]
+    },
+    {
+      "label": "rule-15-amount",
+      "type": "constraint",
+      "summary": "POL-15规定：采购金额不超过10500元由组长审批，超过10500元由采购负责人审批。",
+      "facts": [
+        "POL-15规定：采购金额不超过10500元由组长审批，超过10500元由采购负责人审批。"
+      ],
+      "keywords": [
+        "POL-15",
+        "10500",
+        "采购负责人"
+      ]
+    },
+    {
+      "label": "rule-15-urgent",
+      "type": "constraint",
+      "summary": "POL-15规定：紧急采购仍须至少提供2家供应商报价。",
+      "facts": [
+        "POL-15规定：紧急采购仍须至少提供2家供应商报价。"
+      ],
+      "keywords": [
+        "POL-15",
+        "2",
+        "紧急采购"
+      ]
+    },
+    {
+      "label": "rule-15-invoice",
+      "type": "constraint",
+      "summary": "POL-15规定：采购完成后须在8个自然日内提交发票，逾期需要补充说明。",
+      "facts": [
+        "POL-15规定：采购完成后须在8个自然日内提交发票，逾期需要补充说明。"
+      ],
+      "keywords": [
+        "POL-15",
+        "8",
+        "发票"
+      ]
+    },
+    {
+      "label": "rule-16-amount",
+      "type": "constraint",
+      "summary": "POL-16规定：采购金额不超过11000元由组长审批，超过11000元由部门经理审批。",
+      "facts": [
+        "POL-16规定：采购金额不超过11000元由组长审批，超过11000元由部门经理审批。"
+      ],
+      "keywords": [
+        "POL-16",
+        "11000",
+        "部门经理"
+      ]
+    },
+    {
+      "label": "rule-16-urgent",
+      "type": "constraint",
+      "summary": "POL-16规定：紧急采购仍须至少提供3家供应商报价。",
+      "facts": [
+        "POL-16规定：紧急采购仍须至少提供3家供应商报价。"
+      ],
+      "keywords": [
+        "POL-16",
+        "3",
+        "紧急采购"
+      ]
+    },
+    {
+      "label": "rule-16-invoice",
+      "type": "constraint",
+      "summary": "POL-16规定：采购完成后须在9个自然日内提交发票，逾期需要补充说明。",
+      "facts": [
+        "POL-16规定：采购完成后须在9个自然日内提交发票，逾期需要补充说明。"
+      ],
+      "keywords": [
+        "POL-16",
+        "9",
+        "发票"
+      ]
+    },
+    {
+      "label": "rule-17-amount",
+      "type": "constraint",
+      "summary": "POL-17规定：采购金额不超过11500元由组长审批，超过11500元由业务总监审批。",
+      "facts": [
+        "POL-17规定：采购金额不超过11500元由组长审批，超过11500元由业务总监审批。"
+      ],
+      "keywords": [
+        "POL-17",
+        "11500",
+        "业务总监"
+      ]
+    },
+    {
+      "label": "rule-17-urgent",
+      "type": "constraint",
+      "summary": "POL-17规定：紧急采购仍须至少提供4家供应商报价。",
+      "facts": [
+        "POL-17规定：紧急采购仍须至少提供4家供应商报价。"
+      ],
+      "keywords": [
+        "POL-17",
+        "4",
+        "紧急采购"
+      ]
+    },
+    {
+      "label": "rule-17-invoice",
+      "type": "constraint",
+      "summary": "POL-17规定：采购完成后须在10个自然日内提交发票，逾期需要补充说明。",
+      "facts": [
+        "POL-17规定：采购完成后须在10个自然日内提交发票，逾期需要补充说明。"
+      ],
+      "keywords": [
+        "POL-17",
+        "10",
+        "发票"
+      ]
+    },
+    {
+      "label": "rule-18-amount",
+      "type": "constraint",
+      "summary": "POL-18规定：采购金额不超过12000元由组长审批，超过12000元由财务负责人审批。",
+      "facts": [
+        "POL-18规定：采购金额不超过12000元由组长审批，超过12000元由财务负责人审批。"
+      ],
+      "keywords": [
+        "POL-18",
+        "12000",
+        "财务负责人"
+      ]
+    },
+    {
+      "label": "rule-18-urgent",
+      "type": "constraint",
+      "summary": "POL-18规定：紧急采购仍须至少提供2家供应商报价。",
+      "facts": [
+        "POL-18规定：紧急采购仍须至少提供2家供应商报价。"
+      ],
+      "keywords": [
+        "POL-18",
+        "2",
+        "紧急采购"
+      ]
+    },
+    {
+      "label": "rule-18-invoice",
+      "type": "constraint",
+      "summary": "POL-18规定：采购完成后须在5个自然日内提交发票，逾期需要补充说明。",
+      "facts": [
+        "POL-18规定：采购完成后须在5个自然日内提交发票，逾期需要补充说明。"
+      ],
+      "keywords": [
+        "POL-18",
+        "5",
+        "发票"
+      ]
+    },
+    {
+      "label": "rule-19-amount",
+      "type": "constraint",
+      "summary": "POL-19规定：采购金额不超过12500元由组长审批，超过12500元由采购负责人审批。",
+      "facts": [
+        "POL-19规定：采购金额不超过12500元由组长审批，超过12500元由采购负责人审批。"
+      ],
+      "keywords": [
+        "POL-19",
+        "12500",
+        "采购负责人"
+      ]
+    },
+    {
+      "label": "rule-19-urgent",
+      "type": "constraint",
+      "summary": "POL-19规定：紧急采购仍须至少提供3家供应商报价。",
+      "facts": [
+        "POL-19规定：紧急采购仍须至少提供3家供应商报价。"
+      ],
+      "keywords": [
+        "POL-19",
+        "3",
+        "紧急采购"
+      ]
+    },
+    {
+      "label": "rule-19-invoice",
+      "type": "constraint",
+      "summary": "POL-19规定：采购完成后须在6个自然日内提交发票，逾期需要补充说明。",
+      "facts": [
+        "POL-19规定：采购完成后须在6个自然日内提交发票，逾期需要补充说明。"
+      ],
+      "keywords": [
+        "POL-19",
+        "6",
+        "发票"
+      ]
+    },
+    {
+      "label": "rule-20-amount",
+      "type": "constraint",
+      "summary": "POL-20规定：采购金额不超过13000元由组长审批，超过13000元由部门经理审批。",
+      "facts": [
+        "POL-20规定：采购金额不超过13000元由组长审批，超过13000元由部门经理审批。"
+      ],
+      "keywords": [
+        "POL-20",
+        "13000",
+        "部门经理"
+      ]
+    },
+    {
+      "label": "rule-20-urgent",
+      "type": "constraint",
+      "summary": "POL-20规定：紧急采购仍须至少提供4家供应商报价。",
+      "facts": [
+        "POL-20规定：紧急采购仍须至少提供4家供应商报价。"
+      ],
+      "keywords": [
+        "POL-20",
+        "4",
+        "紧急采购"
+      ]
+    },
+    {
+      "label": "rule-20-invoice",
+      "type": "constraint",
+      "summary": "POL-20规定：采购完成后须在7个自然日内提交发票，逾期需要补充说明。",
+      "facts": [
+        "POL-20规定：采购完成后须在7个自然日内提交发票，逾期需要补充说明。"
+      ],
+      "keywords": [
+        "POL-20",
+        "7",
+        "发票"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "fact-001",
+      "bucket": "fact_qa",
+      "question": "海棠项目采用什么服务端框架？",
+      "expected_memory_ids": [
+        "fact-001"
+      ],
+      "reference_answer": "海棠项目的服务端框架是FastAPI。"
+    },
+    {
+      "case_id": "fact-002",
+      "bucket": "fact_qa",
+      "question": "松风项目采用什么服务端框架？",
+      "expected_memory_ids": [
+        "fact-002"
+      ],
+      "reference_answer": "松风项目的服务端框架是Django。"
+    },
+    {
+      "case_id": "fact-003",
+      "bucket": "fact_qa",
+      "question": "月泉项目采用什么服务端框架？",
+      "expected_memory_ids": [
+        "fact-003"
+      ],
+      "reference_answer": "月泉项目的服务端框架是Flask。"
+    },
+    {
+      "case_id": "fact-004",
+      "bucket": "fact_qa",
+      "question": "竹影项目采用什么服务端框架？",
+      "expected_memory_ids": [
+        "fact-004"
+      ],
+      "reference_answer": "竹影项目的服务端框架是Spring Boot。"
+    },
+    {
+      "case_id": "fact-005",
+      "bucket": "fact_qa",
+      "question": "清和项目采用什么服务端框架？",
+      "expected_memory_ids": [
+        "fact-005"
+      ],
+      "reference_answer": "清和项目的服务端框架是NestJS。"
+    },
+    {
+      "case_id": "fact-006",
+      "bucket": "fact_qa",
+      "question": "南枝项目采用什么服务端框架？",
+      "expected_memory_ids": [
+        "fact-006"
+      ],
+      "reference_answer": "南枝项目的服务端框架是Go Fiber。"
+    },
+    {
+      "case_id": "fact-007",
+      "bucket": "fact_qa",
+      "question": "听雨项目采用什么服务端框架？",
+      "expected_memory_ids": [
+        "fact-007"
+      ],
+      "reference_answer": "听雨项目的服务端框架是Gin。"
+    },
+    {
+      "case_id": "fact-008",
+      "bucket": "fact_qa",
+      "question": "兰台项目采用什么服务端框架？",
+      "expected_memory_ids": [
+        "fact-008"
+      ],
+      "reference_answer": "兰台项目的服务端框架是Ktor。"
+    },
+    {
+      "case_id": "fact-009",
+      "bucket": "fact_qa",
+      "question": "疏影项目采用什么服务端框架？",
+      "expected_memory_ids": [
+        "fact-009"
+      ],
+      "reference_answer": "疏影项目的服务端框架是Express。"
+    },
+    {
+      "case_id": "fact-010",
+      "bucket": "fact_qa",
+      "question": "微澜项目采用什么服务端框架？",
+      "expected_memory_ids": [
+        "fact-010"
+      ],
+      "reference_answer": "微澜项目的服务端框架是Sanic。"
+    },
+    {
+      "case_id": "fact-011",
+      "bucket": "fact_qa",
+      "question": "海棠项目最终选用了哪种主数据库？",
+      "expected_memory_ids": [
+        "fact-011"
+      ],
+      "reference_answer": "海棠项目的主数据库确定为MongoDB。"
+    },
+    {
+      "case_id": "fact-012",
+      "bucket": "fact_qa",
+      "question": "松风项目最终选用了哪种主数据库？",
+      "expected_memory_ids": [
+        "fact-012"
+      ],
+      "reference_answer": "松风项目的主数据库确定为PostgreSQL。"
+    },
+    {
+      "case_id": "fact-013",
+      "bucket": "fact_qa",
+      "question": "月泉项目最终选用了哪种主数据库？",
+      "expected_memory_ids": [
+        "fact-013"
+      ],
+      "reference_answer": "月泉项目的主数据库确定为MySQL。"
+    },
+    {
+      "case_id": "fact-014",
+      "bucket": "fact_qa",
+      "question": "竹影项目最终选用了哪种主数据库？",
+      "expected_memory_ids": [
+        "fact-014"
+      ],
+      "reference_answer": "竹影项目的主数据库确定为MongoDB。"
+    },
+    {
+      "case_id": "fact-015",
+      "bucket": "fact_qa",
+      "question": "清和项目最终选用了哪种主数据库？",
+      "expected_memory_ids": [
+        "fact-015"
+      ],
+      "reference_answer": "清和项目的主数据库确定为PostgreSQL。"
+    },
+    {
+      "case_id": "fact-016",
+      "bucket": "fact_qa",
+      "question": "南枝项目最终选用了哪种主数据库？",
+      "expected_memory_ids": [
+        "fact-016"
+      ],
+      "reference_answer": "南枝项目的主数据库确定为MySQL。"
+    },
+    {
+      "case_id": "fact-017",
+      "bucket": "fact_qa",
+      "question": "听雨项目最终选用了哪种主数据库？",
+      "expected_memory_ids": [
+        "fact-017"
+      ],
+      "reference_answer": "听雨项目的主数据库确定为MongoDB。"
+    },
+    {
+      "case_id": "fact-018",
+      "bucket": "fact_qa",
+      "question": "兰台项目最终选用了哪种主数据库？",
+      "expected_memory_ids": [
+        "fact-018"
+      ],
+      "reference_answer": "兰台项目的主数据库确定为PostgreSQL。"
+    },
+    {
+      "case_id": "fact-019",
+      "bucket": "fact_qa",
+      "question": "疏影项目最终选用了哪种主数据库？",
+      "expected_memory_ids": [
+        "fact-019"
+      ],
+      "reference_answer": "疏影项目的主数据库确定为MySQL。"
+    },
+    {
+      "case_id": "fact-020",
+      "bucket": "fact_qa",
+      "question": "微澜项目最终选用了哪种主数据库？",
+      "expected_memory_ids": [
+        "fact-020"
+      ],
+      "reference_answer": "微澜项目的主数据库确定为MongoDB。"
+    },
+    {
+      "case_id": "fact-021",
+      "bucket": "fact_qa",
+      "question": "谁负责海棠项目的技术工作？",
+      "expected_memory_ids": [
+        "fact-021"
+      ],
+      "reference_answer": "海棠项目的技术负责人是陈工。"
+    },
+    {
+      "case_id": "fact-022",
+      "bucket": "fact_qa",
+      "question": "谁负责松风项目的技术工作？",
+      "expected_memory_ids": [
+        "fact-022"
+      ],
+      "reference_answer": "松风项目的技术负责人是李工。"
+    },
+    {
+      "case_id": "fact-023",
+      "bucket": "fact_qa",
+      "question": "谁负责月泉项目的技术工作？",
+      "expected_memory_ids": [
+        "fact-023"
+      ],
+      "reference_answer": "月泉项目的技术负责人是王工。"
+    },
+    {
+      "case_id": "fact-024",
+      "bucket": "fact_qa",
+      "question": "谁负责竹影项目的技术工作？",
+      "expected_memory_ids": [
+        "fact-024"
+      ],
+      "reference_answer": "竹影项目的技术负责人是周工。"
+    },
+    {
+      "case_id": "fact-025",
+      "bucket": "fact_qa",
+      "question": "谁负责清和项目的技术工作？",
+      "expected_memory_ids": [
+        "fact-025"
+      ],
+      "reference_answer": "清和项目的技术负责人是赵工。"
+    },
+    {
+      "case_id": "fact-026",
+      "bucket": "fact_qa",
+      "question": "谁负责南枝项目的技术工作？",
+      "expected_memory_ids": [
+        "fact-026"
+      ],
+      "reference_answer": "南枝项目的技术负责人是孙工。"
+    },
+    {
+      "case_id": "fact-027",
+      "bucket": "fact_qa",
+      "question": "谁负责听雨项目的技术工作？",
+      "expected_memory_ids": [
+        "fact-027"
+      ],
+      "reference_answer": "听雨项目的技术负责人是吴工。"
+    },
+    {
+      "case_id": "fact-028",
+      "bucket": "fact_qa",
+      "question": "谁负责兰台项目的技术工作？",
+      "expected_memory_ids": [
+        "fact-028"
+      ],
+      "reference_answer": "兰台项目的技术负责人是郑工。"
+    },
+    {
+      "case_id": "fact-029",
+      "bucket": "fact_qa",
+      "question": "谁负责疏影项目的技术工作？",
+      "expected_memory_ids": [
+        "fact-029"
+      ],
+      "reference_answer": "疏影项目的技术负责人是冯工。"
+    },
+    {
+      "case_id": "fact-030",
+      "bucket": "fact_qa",
+      "question": "谁负责微澜项目的技术工作？",
+      "expected_memory_ids": [
+        "fact-030"
+      ],
+      "reference_answer": "微澜项目的技术负责人是何工。"
+    },
+    {
+      "case_id": "fact-031",
+      "bucket": "fact_qa",
+      "question": "海棠项目的首版交付时间是什么时候？",
+      "expected_memory_ids": [
+        "fact-031"
+      ],
+      "reference_answer": "海棠项目计划在2026年1月15日完成首版交付。"
+    },
+    {
+      "case_id": "fact-032",
+      "bucket": "fact_qa",
+      "question": "松风项目的首版交付时间是什么时候？",
+      "expected_memory_ids": [
+        "fact-032"
+      ],
+      "reference_answer": "松风项目计划在2026年2月15日完成首版交付。"
+    },
+    {
+      "case_id": "fact-033",
+      "bucket": "fact_qa",
+      "question": "月泉项目的首版交付时间是什么时候？",
+      "expected_memory_ids": [
+        "fact-033"
+      ],
+      "reference_answer": "月泉项目计划在2026年3月15日完成首版交付。"
+    },
+    {
+      "case_id": "fact-034",
+      "bucket": "fact_qa",
+      "question": "竹影项目的首版交付时间是什么时候？",
+      "expected_memory_ids": [
+        "fact-034"
+      ],
+      "reference_answer": "竹影项目计划在2026年4月15日完成首版交付。"
+    },
+    {
+      "case_id": "fact-035",
+      "bucket": "fact_qa",
+      "question": "清和项目的首版交付时间是什么时候？",
+      "expected_memory_ids": [
+        "fact-035"
+      ],
+      "reference_answer": "清和项目计划在2026年5月15日完成首版交付。"
+    },
+    {
+      "case_id": "fact-036",
+      "bucket": "fact_qa",
+      "question": "南枝项目的首版交付时间是什么时候？",
+      "expected_memory_ids": [
+        "fact-036"
+      ],
+      "reference_answer": "南枝项目计划在2026年6月15日完成首版交付。"
+    },
+    {
+      "case_id": "fact-037",
+      "bucket": "fact_qa",
+      "question": "听雨项目的首版交付时间是什么时候？",
+      "expected_memory_ids": [
+        "fact-037"
+      ],
+      "reference_answer": "听雨项目计划在2026年7月15日完成首版交付。"
+    },
+    {
+      "case_id": "fact-038",
+      "bucket": "fact_qa",
+      "question": "兰台项目的首版交付时间是什么时候？",
+      "expected_memory_ids": [
+        "fact-038"
+      ],
+      "reference_answer": "兰台项目计划在2026年8月15日完成首版交付。"
+    },
+    {
+      "case_id": "fact-039",
+      "bucket": "fact_qa",
+      "question": "疏影项目的首版交付时间是什么时候？",
+      "expected_memory_ids": [
+        "fact-039"
+      ],
+      "reference_answer": "疏影项目计划在2026年9月15日完成首版交付。"
+    },
+    {
+      "case_id": "fact-040",
+      "bucket": "fact_qa",
+      "question": "微澜项目的首版交付时间是什么时候？",
+      "expected_memory_ids": [
+        "fact-040"
+      ],
+      "reference_answer": "微澜项目计划在2026年10月15日完成首版交付。"
+    },
+    {
+      "case_id": "fact-041",
+      "bucket": "fact_qa",
+      "question": "海棠项目的接口必须采用什么安全方式？",
+      "expected_memory_ids": [
+        "fact-041"
+      ],
+      "reference_answer": "海棠项目要求所有接口必须使用JWT鉴权。"
+    },
+    {
+      "case_id": "fact-042",
+      "bucket": "fact_qa",
+      "question": "松风项目的接口必须采用什么安全方式？",
+      "expected_memory_ids": [
+        "fact-042"
+      ],
+      "reference_answer": "松风项目要求所有接口必须使用OAuth 2.0。"
+    },
+    {
+      "case_id": "fact-043",
+      "bucket": "fact_qa",
+      "question": "月泉项目的接口必须采用什么安全方式？",
+      "expected_memory_ids": [
+        "fact-043"
+      ],
+      "reference_answer": "月泉项目要求所有接口必须使用双向TLS。"
+    },
+    {
+      "case_id": "fact-044",
+      "bucket": "fact_qa",
+      "question": "竹影项目的接口必须采用什么安全方式？",
+      "expected_memory_ids": [
+        "fact-044"
+      ],
+      "reference_answer": "竹影项目要求所有接口必须使用API Key签名。"
+    },
+    {
+      "case_id": "fact-045",
+      "bucket": "fact_qa",
+      "question": "清和项目的接口必须采用什么安全方式？",
+      "expected_memory_ids": [
+        "fact-045"
+      ],
+      "reference_answer": "清和项目要求所有接口必须使用JWT鉴权。"
+    },
+    {
+      "case_id": "fact-046",
+      "bucket": "fact_qa",
+      "question": "南枝项目的接口必须采用什么安全方式？",
+      "expected_memory_ids": [
+        "fact-046"
+      ],
+      "reference_answer": "南枝项目要求所有接口必须使用OAuth 2.0。"
+    },
+    {
+      "case_id": "fact-047",
+      "bucket": "fact_qa",
+      "question": "听雨项目的接口必须采用什么安全方式？",
+      "expected_memory_ids": [
+        "fact-047"
+      ],
+      "reference_answer": "听雨项目要求所有接口必须使用双向TLS。"
+    },
+    {
+      "case_id": "fact-048",
+      "bucket": "fact_qa",
+      "question": "兰台项目的接口必须采用什么安全方式？",
+      "expected_memory_ids": [
+        "fact-048"
+      ],
+      "reference_answer": "兰台项目要求所有接口必须使用API Key签名。"
+    },
+    {
+      "case_id": "fact-049",
+      "bucket": "fact_qa",
+      "question": "疏影项目的接口必须采用什么安全方式？",
+      "expected_memory_ids": [
+        "fact-049"
+      ],
+      "reference_answer": "疏影项目要求所有接口必须使用JWT鉴权。"
+    },
+    {
+      "case_id": "fact-050",
+      "bucket": "fact_qa",
+      "question": "微澜项目的接口必须采用什么安全方式？",
+      "expected_memory_ids": [
+        "fact-050"
+      ],
+      "reference_answer": "微澜项目要求所有接口必须使用OAuth 2.0。"
+    },
+    {
+      "case_id": "fact-051",
+      "bucket": "fact_qa",
+      "question": "海棠项目主要部署在哪个城市？",
+      "expected_memory_ids": [
+        "fact-051"
+      ],
+      "reference_answer": "海棠项目的主要部署区域是苏州。"
+    },
+    {
+      "case_id": "fact-052",
+      "bucket": "fact_qa",
+      "question": "松风项目主要部署在哪个城市？",
+      "expected_memory_ids": [
+        "fact-052"
+      ],
+      "reference_answer": "松风项目的主要部署区域是南京。"
+    },
+    {
+      "case_id": "fact-053",
+      "bucket": "fact_qa",
+      "question": "月泉项目主要部署在哪个城市？",
+      "expected_memory_ids": [
+        "fact-053"
+      ],
+      "reference_answer": "月泉项目的主要部署区域是上海。"
+    },
+    {
+      "case_id": "fact-054",
+      "bucket": "fact_qa",
+      "question": "竹影项目主要部署在哪个城市？",
+      "expected_memory_ids": [
+        "fact-054"
+      ],
+      "reference_answer": "竹影项目的主要部署区域是杭州。"
+    },
+    {
+      "case_id": "fact-055",
+      "bucket": "fact_qa",
+      "question": "清和项目主要部署在哪个城市？",
+      "expected_memory_ids": [
+        "fact-055"
+      ],
+      "reference_answer": "清和项目的主要部署区域是无锡。"
+    },
+    {
+      "case_id": "fact-056",
+      "bucket": "fact_qa",
+      "question": "南枝项目主要部署在哪个城市？",
+      "expected_memory_ids": [
+        "fact-056"
+      ],
+      "reference_answer": "南枝项目的主要部署区域是常州。"
+    },
+    {
+      "case_id": "fact-057",
+      "bucket": "fact_qa",
+      "question": "听雨项目主要部署在哪个城市？",
+      "expected_memory_ids": [
+        "fact-057"
+      ],
+      "reference_answer": "听雨项目的主要部署区域是合肥。"
+    },
+    {
+      "case_id": "fact-058",
+      "bucket": "fact_qa",
+      "question": "兰台项目主要部署在哪个城市？",
+      "expected_memory_ids": [
+        "fact-058"
+      ],
+      "reference_answer": "兰台项目的主要部署区域是武汉。"
+    },
+    {
+      "case_id": "fact-059",
+      "bucket": "fact_qa",
+      "question": "疏影项目主要部署在哪个城市？",
+      "expected_memory_ids": [
+        "fact-059"
+      ],
+      "reference_answer": "疏影项目的主要部署区域是成都。"
+    },
+    {
+      "case_id": "fact-060",
+      "bucket": "fact_qa",
+      "question": "微澜项目主要部署在哪个城市？",
+      "expected_memory_ids": [
+        "fact-060"
+      ],
+      "reference_answer": "微澜项目的主要部署区域是深圳。"
+    },
+    {
+      "case_id": "fact-061",
+      "bucket": "fact_qa",
+      "question": "海棠项目周报应该采用什么表达方式？",
+      "expected_memory_ids": [
+        "fact-061"
+      ],
+      "reference_answer": "海棠项目的周报偏好使用中文分点。"
+    },
+    {
+      "case_id": "fact-062",
+      "bucket": "fact_qa",
+      "question": "松风项目周报应该采用什么表达方式？",
+      "expected_memory_ids": [
+        "fact-062"
+      ],
+      "reference_answer": "松风项目的周报偏好使用先给结论。"
+    },
+    {
+      "case_id": "fact-063",
+      "bucket": "fact_qa",
+      "question": "月泉项目周报应该采用什么表达方式？",
+      "expected_memory_ids": [
+        "fact-063"
+      ],
+      "reference_answer": "月泉项目的周报偏好使用表格汇总。"
+    },
+    {
+      "case_id": "fact-064",
+      "bucket": "fact_qa",
+      "question": "竹影项目周报应该采用什么表达方式？",
+      "expected_memory_ids": [
+        "fact-064"
+      ],
+      "reference_answer": "竹影项目的周报偏好使用简洁短句。"
+    },
+    {
+      "case_id": "fact-065",
+      "bucket": "fact_qa",
+      "question": "清和项目周报应该采用什么表达方式？",
+      "expected_memory_ids": [
+        "fact-065"
+      ],
+      "reference_answer": "清和项目的周报偏好使用中文分点。"
+    },
+    {
+      "case_id": "fact-066",
+      "bucket": "fact_qa",
+      "question": "南枝项目周报应该采用什么表达方式？",
+      "expected_memory_ids": [
+        "fact-066"
+      ],
+      "reference_answer": "南枝项目的周报偏好使用先给结论。"
+    },
+    {
+      "case_id": "fact-067",
+      "bucket": "fact_qa",
+      "question": "听雨项目周报应该采用什么表达方式？",
+      "expected_memory_ids": [
+        "fact-067"
+      ],
+      "reference_answer": "听雨项目的周报偏好使用表格汇总。"
+    },
+    {
+      "case_id": "fact-068",
+      "bucket": "fact_qa",
+      "question": "兰台项目周报应该采用什么表达方式？",
+      "expected_memory_ids": [
+        "fact-068"
+      ],
+      "reference_answer": "兰台项目的周报偏好使用简洁短句。"
+    },
+    {
+      "case_id": "fact-069",
+      "bucket": "fact_qa",
+      "question": "疏影项目周报应该采用什么表达方式？",
+      "expected_memory_ids": [
+        "fact-069"
+      ],
+      "reference_answer": "疏影项目的周报偏好使用中文分点。"
+    },
+    {
+      "case_id": "fact-070",
+      "bucket": "fact_qa",
+      "question": "微澜项目周报应该采用什么表达方式？",
+      "expected_memory_ids": [
+        "fact-070"
+      ],
+      "reference_answer": "微澜项目的周报偏好使用先给结论。"
+    },
+    {
+      "case_id": "fact-071",
+      "bucket": "fact_qa",
+      "question": "海棠项目本季度最重要的目标是什么？",
+      "expected_memory_ids": [
+        "fact-071"
+      ],
+      "reference_answer": "海棠项目本季度的核心目标是完成内测。"
+    },
+    {
+      "case_id": "fact-072",
+      "bucket": "fact_qa",
+      "question": "松风项目本季度最重要的目标是什么？",
+      "expected_memory_ids": [
+        "fact-072"
+      ],
+      "reference_answer": "松风项目本季度的核心目标是降低延迟。"
+    },
+    {
+      "case_id": "fact-073",
+      "bucket": "fact_qa",
+      "question": "月泉项目本季度最重要的目标是什么？",
+      "expected_memory_ids": [
+        "fact-073"
+      ],
+      "reference_answer": "月泉项目本季度的核心目标是提升召回率。"
+    },
+    {
+      "case_id": "fact-074",
+      "bucket": "fact_qa",
+      "question": "竹影项目本季度最重要的目标是什么？",
+      "expected_memory_ids": [
+        "fact-074"
+      ],
+      "reference_answer": "竹影项目本季度的核心目标是完成安全审计。"
+    },
+    {
+      "case_id": "fact-075",
+      "bucket": "fact_qa",
+      "question": "清和项目本季度最重要的目标是什么？",
+      "expected_memory_ids": [
+        "fact-075"
+      ],
+      "reference_answer": "清和项目本季度的核心目标是完成内测。"
+    },
+    {
+      "case_id": "fact-076",
+      "bucket": "fact_qa",
+      "question": "南枝项目本季度最重要的目标是什么？",
+      "expected_memory_ids": [
+        "fact-076"
+      ],
+      "reference_answer": "南枝项目本季度的核心目标是降低延迟。"
+    },
+    {
+      "case_id": "fact-077",
+      "bucket": "fact_qa",
+      "question": "听雨项目本季度最重要的目标是什么？",
+      "expected_memory_ids": [
+        "fact-077"
+      ],
+      "reference_answer": "听雨项目本季度的核心目标是提升召回率。"
+    },
+    {
+      "case_id": "fact-078",
+      "bucket": "fact_qa",
+      "question": "兰台项目本季度最重要的目标是什么？",
+      "expected_memory_ids": [
+        "fact-078"
+      ],
+      "reference_answer": "兰台项目本季度的核心目标是完成安全审计。"
+    },
+    {
+      "case_id": "fact-079",
+      "bucket": "fact_qa",
+      "question": "疏影项目本季度最重要的目标是什么？",
+      "expected_memory_ids": [
+        "fact-079"
+      ],
+      "reference_answer": "疏影项目本季度的核心目标是完成内测。"
+    },
+    {
+      "case_id": "fact-080",
+      "bucket": "fact_qa",
+      "question": "微澜项目本季度最重要的目标是什么？",
+      "expected_memory_ids": [
+        "fact-080"
+      ],
+      "reference_answer": "微澜项目本季度的核心目标是降低延迟。"
+    },
+    {
+      "case_id": "multi-01-a",
+      "bucket": "multi_hop_qa",
+      "question": "星舟平台由谁负责，并使用什么服务端技术？",
+      "expected_memory_ids": [
+        "multi-01-owner",
+        "multi-01-tech"
+      ],
+      "reference_answer": "由陈工负责，服务端使用FastAPI。"
+    },
+    {
+      "case_id": "multi-01-b",
+      "bucket": "multi_hop_qa",
+      "question": "星舟平台使用什么技术，计划何时上线？",
+      "expected_memory_ids": [
+        "multi-01-tech",
+        "multi-01-plan"
+      ],
+      "reference_answer": "服务端使用FastAPI，计划在2026年2月9日上线。"
+    },
+    {
+      "case_id": "multi-01-c",
+      "bucket": "multi_hop_qa",
+      "question": "星舟平台的负责人是谁，最终在哪个城市上线？",
+      "expected_memory_ids": [
+        "multi-01-owner",
+        "multi-01-plan"
+      ],
+      "reference_answer": "负责人是陈工，上线城市是苏州。"
+    },
+    {
+      "case_id": "multi-02-a",
+      "bucket": "multi_hop_qa",
+      "question": "云桥平台由谁负责，并使用什么服务端技术？",
+      "expected_memory_ids": [
+        "multi-02-owner",
+        "multi-02-tech"
+      ],
+      "reference_answer": "由李工负责，服务端使用Django。"
+    },
+    {
+      "case_id": "multi-02-b",
+      "bucket": "multi_hop_qa",
+      "question": "云桥平台使用什么技术，计划何时上线？",
+      "expected_memory_ids": [
+        "multi-02-tech",
+        "multi-02-plan"
+      ],
+      "reference_answer": "服务端使用Django，计划在2026年3月10日上线。"
+    },
+    {
+      "case_id": "multi-02-c",
+      "bucket": "multi_hop_qa",
+      "question": "云桥平台的负责人是谁，最终在哪个城市上线？",
+      "expected_memory_ids": [
+        "multi-02-owner",
+        "multi-02-plan"
+      ],
+      "reference_answer": "负责人是李工，上线城市是南京。"
+    },
+    {
+      "case_id": "multi-03-a",
+      "bucket": "multi_hop_qa",
+      "question": "青岚平台由谁负责，并使用什么服务端技术？",
+      "expected_memory_ids": [
+        "multi-03-owner",
+        "multi-03-tech"
+      ],
+      "reference_answer": "由王工负责，服务端使用Flask。"
+    },
+    {
+      "case_id": "multi-03-b",
+      "bucket": "multi_hop_qa",
+      "question": "青岚平台使用什么技术，计划何时上线？",
+      "expected_memory_ids": [
+        "multi-03-tech",
+        "multi-03-plan"
+      ],
+      "reference_answer": "服务端使用Flask，计划在2026年4月11日上线。"
+    },
+    {
+      "case_id": "multi-03-c",
+      "bucket": "multi_hop_qa",
+      "question": "青岚平台的负责人是谁，最终在哪个城市上线？",
+      "expected_memory_ids": [
+        "multi-03-owner",
+        "multi-03-plan"
+      ],
+      "reference_answer": "负责人是王工，上线城市是上海。"
+    },
+    {
+      "case_id": "multi-04-a",
+      "bucket": "multi_hop_qa",
+      "question": "远帆平台由谁负责，并使用什么服务端技术？",
+      "expected_memory_ids": [
+        "multi-04-owner",
+        "multi-04-tech"
+      ],
+      "reference_answer": "由周工负责，服务端使用Spring Boot。"
+    },
+    {
+      "case_id": "multi-04-b",
+      "bucket": "multi_hop_qa",
+      "question": "远帆平台使用什么技术，计划何时上线？",
+      "expected_memory_ids": [
+        "multi-04-tech",
+        "multi-04-plan"
+      ],
+      "reference_answer": "服务端使用Spring Boot，计划在2026年5月12日上线。"
+    },
+    {
+      "case_id": "multi-04-c",
+      "bucket": "multi_hop_qa",
+      "question": "远帆平台的负责人是谁，最终在哪个城市上线？",
+      "expected_memory_ids": [
+        "multi-04-owner",
+        "multi-04-plan"
+      ],
+      "reference_answer": "负责人是周工，上线城市是杭州。"
+    },
+    {
+      "case_id": "multi-05-a",
+      "bucket": "multi_hop_qa",
+      "question": "晨曦平台由谁负责，并使用什么服务端技术？",
+      "expected_memory_ids": [
+        "multi-05-owner",
+        "multi-05-tech"
+      ],
+      "reference_answer": "由赵工负责，服务端使用NestJS。"
+    },
+    {
+      "case_id": "multi-05-b",
+      "bucket": "multi_hop_qa",
+      "question": "晨曦平台使用什么技术，计划何时上线？",
+      "expected_memory_ids": [
+        "multi-05-tech",
+        "multi-05-plan"
+      ],
+      "reference_answer": "服务端使用NestJS，计划在2026年6月13日上线。"
+    },
+    {
+      "case_id": "multi-05-c",
+      "bucket": "multi_hop_qa",
+      "question": "晨曦平台的负责人是谁，最终在哪个城市上线？",
+      "expected_memory_ids": [
+        "multi-05-owner",
+        "multi-05-plan"
+      ],
+      "reference_answer": "负责人是赵工，上线城市是无锡。"
+    },
+    {
+      "case_id": "multi-06-a",
+      "bucket": "multi_hop_qa",
+      "question": "灵犀平台由谁负责，并使用什么服务端技术？",
+      "expected_memory_ids": [
+        "multi-06-owner",
+        "multi-06-tech"
+      ],
+      "reference_answer": "由孙工负责，服务端使用Go Fiber。"
+    },
+    {
+      "case_id": "multi-06-b",
+      "bucket": "multi_hop_qa",
+      "question": "灵犀平台使用什么技术，计划何时上线？",
+      "expected_memory_ids": [
+        "multi-06-tech",
+        "multi-06-plan"
+      ],
+      "reference_answer": "服务端使用Go Fiber，计划在2026年7月14日上线。"
+    },
+    {
+      "case_id": "multi-06-c",
+      "bucket": "multi_hop_qa",
+      "question": "灵犀平台的负责人是谁，最终在哪个城市上线？",
+      "expected_memory_ids": [
+        "multi-06-owner",
+        "multi-06-plan"
+      ],
+      "reference_answer": "负责人是孙工，上线城市是常州。"
+    },
+    {
+      "case_id": "multi-07-a",
+      "bucket": "multi_hop_qa",
+      "question": "天穹平台由谁负责，并使用什么服务端技术？",
+      "expected_memory_ids": [
+        "multi-07-owner",
+        "multi-07-tech"
+      ],
+      "reference_answer": "由吴工负责，服务端使用Gin。"
+    },
+    {
+      "case_id": "multi-07-b",
+      "bucket": "multi_hop_qa",
+      "question": "天穹平台使用什么技术，计划何时上线？",
+      "expected_memory_ids": [
+        "multi-07-tech",
+        "multi-07-plan"
+      ],
+      "reference_answer": "服务端使用Gin，计划在2026年8月15日上线。"
+    },
+    {
+      "case_id": "multi-07-c",
+      "bucket": "multi_hop_qa",
+      "question": "天穹平台的负责人是谁，最终在哪个城市上线？",
+      "expected_memory_ids": [
+        "multi-07-owner",
+        "multi-07-plan"
+      ],
+      "reference_answer": "负责人是吴工，上线城市是合肥。"
+    },
+    {
+      "case_id": "multi-08-a",
+      "bucket": "multi_hop_qa",
+      "question": "北辰平台由谁负责，并使用什么服务端技术？",
+      "expected_memory_ids": [
+        "multi-08-owner",
+        "multi-08-tech"
+      ],
+      "reference_answer": "由郑工负责，服务端使用Ktor。"
+    },
+    {
+      "case_id": "multi-08-b",
+      "bucket": "multi_hop_qa",
+      "question": "北辰平台使用什么技术，计划何时上线？",
+      "expected_memory_ids": [
+        "multi-08-tech",
+        "multi-08-plan"
+      ],
+      "reference_answer": "服务端使用Ktor，计划在2026年9月16日上线。"
+    },
+    {
+      "case_id": "multi-08-c",
+      "bucket": "multi_hop_qa",
+      "question": "北辰平台的负责人是谁，最终在哪个城市上线？",
+      "expected_memory_ids": [
+        "multi-08-owner",
+        "multi-08-plan"
+      ],
+      "reference_answer": "负责人是郑工，上线城市是武汉。"
+    },
+    {
+      "case_id": "multi-09-a",
+      "bucket": "multi_hop_qa",
+      "question": "流光平台由谁负责，并使用什么服务端技术？",
+      "expected_memory_ids": [
+        "multi-09-owner",
+        "multi-09-tech"
+      ],
+      "reference_answer": "由冯工负责，服务端使用Express。"
+    },
+    {
+      "case_id": "multi-09-b",
+      "bucket": "multi_hop_qa",
+      "question": "流光平台使用什么技术，计划何时上线？",
+      "expected_memory_ids": [
+        "multi-09-tech",
+        "multi-09-plan"
+      ],
+      "reference_answer": "服务端使用Express，计划在2026年10月17日上线。"
+    },
+    {
+      "case_id": "multi-09-c",
+      "bucket": "multi_hop_qa",
+      "question": "流光平台的负责人是谁，最终在哪个城市上线？",
+      "expected_memory_ids": [
+        "multi-09-owner",
+        "multi-09-plan"
+      ],
+      "reference_answer": "负责人是冯工，上线城市是成都。"
+    },
+    {
+      "case_id": "multi-10-a",
+      "bucket": "multi_hop_qa",
+      "question": "山海平台由谁负责，并使用什么服务端技术？",
+      "expected_memory_ids": [
+        "multi-10-owner",
+        "multi-10-tech"
+      ],
+      "reference_answer": "由何工负责，服务端使用Sanic。"
+    },
+    {
+      "case_id": "multi-10-b",
+      "bucket": "multi_hop_qa",
+      "question": "山海平台使用什么技术，计划何时上线？",
+      "expected_memory_ids": [
+        "multi-10-tech",
+        "multi-10-plan"
+      ],
+      "reference_answer": "服务端使用Sanic，计划在2026年11月18日上线。"
+    },
+    {
+      "case_id": "multi-10-c",
+      "bucket": "multi_hop_qa",
+      "question": "山海平台的负责人是谁，最终在哪个城市上线？",
+      "expected_memory_ids": [
+        "multi-10-owner",
+        "multi-10-plan"
+      ],
+      "reference_answer": "负责人是何工，上线城市是深圳。"
+    },
+    {
+      "case_id": "multi-11-a",
+      "bucket": "multi_hop_qa",
+      "question": "启明平台由谁负责，并使用什么服务端技术？",
+      "expected_memory_ids": [
+        "multi-11-owner",
+        "multi-11-tech"
+      ],
+      "reference_answer": "由郭工负责，服务端使用FastAPI。"
+    },
+    {
+      "case_id": "multi-11-b",
+      "bucket": "multi_hop_qa",
+      "question": "启明平台使用什么技术，计划何时上线？",
+      "expected_memory_ids": [
+        "multi-11-tech",
+        "multi-11-plan"
+      ],
+      "reference_answer": "服务端使用FastAPI，计划在2026年12月19日上线。"
+    },
+    {
+      "case_id": "multi-11-c",
+      "bucket": "multi_hop_qa",
+      "question": "启明平台的负责人是谁，最终在哪个城市上线？",
+      "expected_memory_ids": [
+        "multi-11-owner",
+        "multi-11-plan"
+      ],
+      "reference_answer": "负责人是郭工，上线城市是北京。"
+    },
+    {
+      "case_id": "multi-12-a",
+      "bucket": "multi_hop_qa",
+      "question": "知微平台由谁负责，并使用什么服务端技术？",
+      "expected_memory_ids": [
+        "multi-12-owner",
+        "multi-12-tech"
+      ],
+      "reference_answer": "由林工负责，服务端使用Django。"
+    },
+    {
+      "case_id": "multi-12-b",
+      "bucket": "multi_hop_qa",
+      "question": "知微平台使用什么技术，计划何时上线？",
+      "expected_memory_ids": [
+        "multi-12-tech",
+        "multi-12-plan"
+      ],
+      "reference_answer": "服务端使用Django，计划在2026年1月20日上线。"
+    },
+    {
+      "case_id": "multi-12-c",
+      "bucket": "multi_hop_qa",
+      "question": "知微平台的负责人是谁，最终在哪个城市上线？",
+      "expected_memory_ids": [
+        "multi-12-owner",
+        "multi-12-plan"
+      ],
+      "reference_answer": "负责人是林工，上线城市是天津。"
+    },
+    {
+      "case_id": "multi-13-a",
+      "bucket": "multi_hop_qa",
+      "question": "沧澜平台由谁负责，并使用什么服务端技术？",
+      "expected_memory_ids": [
+        "multi-13-owner",
+        "multi-13-tech"
+      ],
+      "reference_answer": "由高工负责，服务端使用Flask。"
+    },
+    {
+      "case_id": "multi-13-b",
+      "bucket": "multi_hop_qa",
+      "question": "沧澜平台使用什么技术，计划何时上线？",
+      "expected_memory_ids": [
+        "multi-13-tech",
+        "multi-13-plan"
+      ],
+      "reference_answer": "服务端使用Flask，计划在2026年2月21日上线。"
+    },
+    {
+      "case_id": "multi-13-c",
+      "bucket": "multi_hop_qa",
+      "question": "沧澜平台的负责人是谁，最终在哪个城市上线？",
+      "expected_memory_ids": [
+        "multi-13-owner",
+        "multi-13-plan"
+      ],
+      "reference_answer": "负责人是高工，上线城市是重庆。"
+    },
+    {
+      "case_id": "multi-14-a",
+      "bucket": "multi_hop_qa",
+      "question": "望舒平台由谁负责，并使用什么服务端技术？",
+      "expected_memory_ids": [
+        "multi-14-owner",
+        "multi-14-tech"
+      ],
+      "reference_answer": "由罗工负责，服务端使用Spring Boot。"
+    },
+    {
+      "case_id": "multi-14-b",
+      "bucket": "multi_hop_qa",
+      "question": "望舒平台使用什么技术，计划何时上线？",
+      "expected_memory_ids": [
+        "multi-14-tech",
+        "multi-14-plan"
+      ],
+      "reference_answer": "服务端使用Spring Boot，计划在2026年3月22日上线。"
+    },
+    {
+      "case_id": "multi-14-c",
+      "bucket": "multi_hop_qa",
+      "question": "望舒平台的负责人是谁，最终在哪个城市上线？",
+      "expected_memory_ids": [
+        "multi-14-owner",
+        "multi-14-plan"
+      ],
+      "reference_answer": "负责人是罗工，上线城市是西安。"
+    },
+    {
+      "case_id": "multi-15-a",
+      "bucket": "multi_hop_qa",
+      "question": "玄鸟平台由谁负责，并使用什么服务端技术？",
+      "expected_memory_ids": [
+        "multi-15-owner",
+        "multi-15-tech"
+      ],
+      "reference_answer": "由宋工负责，服务端使用NestJS。"
+    },
+    {
+      "case_id": "multi-15-b",
+      "bucket": "multi_hop_qa",
+      "question": "玄鸟平台使用什么技术，计划何时上线？",
+      "expected_memory_ids": [
+        "multi-15-tech",
+        "multi-15-plan"
+      ],
+      "reference_answer": "服务端使用NestJS，计划在2026年4月23日上线。"
+    },
+    {
+      "case_id": "multi-15-c",
+      "bucket": "multi_hop_qa",
+      "question": "玄鸟平台的负责人是谁，最终在哪个城市上线？",
+      "expected_memory_ids": [
+        "multi-15-owner",
+        "multi-15-plan"
+      ],
+      "reference_answer": "负责人是宋工，上线城市是长沙。"
+    },
+    {
+      "case_id": "multi-16-a",
+      "bucket": "multi_hop_qa",
+      "question": "赤霄平台由谁负责，并使用什么服务端技术？",
+      "expected_memory_ids": [
+        "multi-16-owner",
+        "multi-16-tech"
+      ],
+      "reference_answer": "由谢工负责，服务端使用Go Fiber。"
+    },
+    {
+      "case_id": "multi-16-b",
+      "bucket": "multi_hop_qa",
+      "question": "赤霄平台使用什么技术，计划何时上线？",
+      "expected_memory_ids": [
+        "multi-16-tech",
+        "multi-16-plan"
+      ],
+      "reference_answer": "服务端使用Go Fiber，计划在2026年5月24日上线。"
+    },
+    {
+      "case_id": "multi-16-c",
+      "bucket": "multi_hop_qa",
+      "question": "赤霄平台的负责人是谁，最终在哪个城市上线？",
+      "expected_memory_ids": [
+        "multi-16-owner",
+        "multi-16-plan"
+      ],
+      "reference_answer": "负责人是谢工，上线城市是青岛。"
+    },
+    {
+      "case_id": "multi-17-a",
+      "bucket": "multi_hop_qa",
+      "question": "白泽平台由谁负责，并使用什么服务端技术？",
+      "expected_memory_ids": [
+        "multi-17-owner",
+        "multi-17-tech"
+      ],
+      "reference_answer": "由唐工负责，服务端使用Gin。"
+    },
+    {
+      "case_id": "multi-17-b",
+      "bucket": "multi_hop_qa",
+      "question": "白泽平台使用什么技术，计划何时上线？",
+      "expected_memory_ids": [
+        "multi-17-tech",
+        "multi-17-plan"
+      ],
+      "reference_answer": "服务端使用Gin，计划在2026年6月25日上线。"
+    },
+    {
+      "case_id": "multi-17-c",
+      "bucket": "multi_hop_qa",
+      "question": "白泽平台的负责人是谁，最终在哪个城市上线？",
+      "expected_memory_ids": [
+        "multi-17-owner",
+        "multi-17-plan"
+      ],
+      "reference_answer": "负责人是唐工，上线城市是厦门。"
+    },
+    {
+      "case_id": "multi-18-a",
+      "bucket": "multi_hop_qa",
+      "question": "扶摇平台由谁负责，并使用什么服务端技术？",
+      "expected_memory_ids": [
+        "multi-18-owner",
+        "multi-18-tech"
+      ],
+      "reference_answer": "由韩工负责，服务端使用Ktor。"
+    },
+    {
+      "case_id": "multi-18-b",
+      "bucket": "multi_hop_qa",
+      "question": "扶摇平台使用什么技术，计划何时上线？",
+      "expected_memory_ids": [
+        "multi-18-tech",
+        "multi-18-plan"
+      ],
+      "reference_answer": "服务端使用Ktor，计划在2026年7月26日上线。"
+    },
+    {
+      "case_id": "multi-18-c",
+      "bucket": "multi_hop_qa",
+      "question": "扶摇平台的负责人是谁，最终在哪个城市上线？",
+      "expected_memory_ids": [
+        "multi-18-owner",
+        "multi-18-plan"
+      ],
+      "reference_answer": "负责人是韩工，上线城市是宁波。"
+    },
+    {
+      "case_id": "multi-19-a",
+      "bucket": "multi_hop_qa",
+      "question": "长风平台由谁负责，并使用什么服务端技术？",
+      "expected_memory_ids": [
+        "multi-19-owner",
+        "multi-19-tech"
+      ],
+      "reference_answer": "由曹工负责，服务端使用Express。"
+    },
+    {
+      "case_id": "multi-19-b",
+      "bucket": "multi_hop_qa",
+      "question": "长风平台使用什么技术，计划何时上线？",
+      "expected_memory_ids": [
+        "multi-19-tech",
+        "multi-19-plan"
+      ],
+      "reference_answer": "服务端使用Express，计划在2026年8月27日上线。"
+    },
+    {
+      "case_id": "multi-19-c",
+      "bucket": "multi_hop_qa",
+      "question": "长风平台的负责人是谁，最终在哪个城市上线？",
+      "expected_memory_ids": [
+        "multi-19-owner",
+        "multi-19-plan"
+      ],
+      "reference_answer": "负责人是曹工，上线城市是济南。"
+    },
+    {
+      "case_id": "multi-20-a",
+      "bucket": "multi_hop_qa",
+      "question": "归鸿平台由谁负责，并使用什么服务端技术？",
+      "expected_memory_ids": [
+        "multi-20-owner",
+        "multi-20-tech"
+      ],
+      "reference_answer": "由许工负责，服务端使用Sanic。"
+    },
+    {
+      "case_id": "multi-20-b",
+      "bucket": "multi_hop_qa",
+      "question": "归鸿平台使用什么技术，计划何时上线？",
+      "expected_memory_ids": [
+        "multi-20-tech",
+        "multi-20-plan"
+      ],
+      "reference_answer": "服务端使用Sanic，计划在2026年9月8日上线。"
+    },
+    {
+      "case_id": "multi-20-c",
+      "bucket": "multi_hop_qa",
+      "question": "归鸿平台的负责人是谁，最终在哪个城市上线？",
+      "expected_memory_ids": [
+        "multi-20-owner",
+        "multi-20-plan"
+      ],
+      "reference_answer": "负责人是许工，上线城市是福州。"
+    },
+    {
+      "case_id": "rule-01-a",
+      "bucket": "business_rule_qa",
+      "question": "按POL-01执行一笔4300元的紧急采购，需要谁审批并准备多少家报价？",
+      "expected_memory_ids": [
+        "rule-01-amount",
+        "rule-01-urgent"
+      ],
+      "reference_answer": "需要业务总监审批，并至少提供3家供应商报价。"
+    },
+    {
+      "case_id": "rule-01-b",
+      "bucket": "business_rule_qa",
+      "question": "按POL-01完成采购后第8天才提交发票，是否合规？",
+      "expected_memory_ids": [
+        "rule-01-invoice"
+      ],
+      "reference_answer": "不合规，已超过6个自然日，需要补充逾期说明。"
+    },
+    {
+      "case_id": "rule-01-c",
+      "bucket": "business_rule_qa",
+      "question": "按POL-01进行3300元紧急采购，应由谁审批，还要满足什么报价要求？",
+      "expected_memory_ids": [
+        "rule-01-amount",
+        "rule-01-urgent"
+      ],
+      "reference_answer": "应由组长审批，并至少提供3家供应商报价。"
+    },
+    {
+      "case_id": "rule-02-a",
+      "bucket": "business_rule_qa",
+      "question": "按POL-02执行一笔4800元的紧急采购，需要谁审批并准备多少家报价？",
+      "expected_memory_ids": [
+        "rule-02-amount",
+        "rule-02-urgent"
+      ],
+      "reference_answer": "需要财务负责人审批，并至少提供4家供应商报价。"
+    },
+    {
+      "case_id": "rule-02-b",
+      "bucket": "business_rule_qa",
+      "question": "按POL-02完成采购后第9天才提交发票，是否合规？",
+      "expected_memory_ids": [
+        "rule-02-invoice"
+      ],
+      "reference_answer": "不合规，已超过7个自然日，需要补充逾期说明。"
+    },
+    {
+      "case_id": "rule-02-c",
+      "bucket": "business_rule_qa",
+      "question": "按POL-02进行3800元紧急采购，应由谁审批，还要满足什么报价要求？",
+      "expected_memory_ids": [
+        "rule-02-amount",
+        "rule-02-urgent"
+      ],
+      "reference_answer": "应由组长审批，并至少提供4家供应商报价。"
+    },
+    {
+      "case_id": "rule-03-a",
+      "bucket": "business_rule_qa",
+      "question": "按POL-03执行一笔5300元的紧急采购，需要谁审批并准备多少家报价？",
+      "expected_memory_ids": [
+        "rule-03-amount",
+        "rule-03-urgent"
+      ],
+      "reference_answer": "需要采购负责人审批，并至少提供2家供应商报价。"
+    },
+    {
+      "case_id": "rule-03-b",
+      "bucket": "business_rule_qa",
+      "question": "按POL-03完成采购后第10天才提交发票，是否合规？",
+      "expected_memory_ids": [
+        "rule-03-invoice"
+      ],
+      "reference_answer": "不合规，已超过8个自然日，需要补充逾期说明。"
+    },
+    {
+      "case_id": "rule-03-c",
+      "bucket": "business_rule_qa",
+      "question": "按POL-03进行4300元紧急采购，应由谁审批，还要满足什么报价要求？",
+      "expected_memory_ids": [
+        "rule-03-amount",
+        "rule-03-urgent"
+      ],
+      "reference_answer": "应由组长审批，并至少提供2家供应商报价。"
+    },
+    {
+      "case_id": "rule-04-a",
+      "bucket": "business_rule_qa",
+      "question": "按POL-04执行一笔5800元的紧急采购，需要谁审批并准备多少家报价？",
+      "expected_memory_ids": [
+        "rule-04-amount",
+        "rule-04-urgent"
+      ],
+      "reference_answer": "需要部门经理审批，并至少提供3家供应商报价。"
+    },
+    {
+      "case_id": "rule-04-b",
+      "bucket": "business_rule_qa",
+      "question": "按POL-04完成采购后第11天才提交发票，是否合规？",
+      "expected_memory_ids": [
+        "rule-04-invoice"
+      ],
+      "reference_answer": "不合规，已超过9个自然日，需要补充逾期说明。"
+    },
+    {
+      "case_id": "rule-04-c",
+      "bucket": "business_rule_qa",
+      "question": "按POL-04进行4800元紧急采购，应由谁审批，还要满足什么报价要求？",
+      "expected_memory_ids": [
+        "rule-04-amount",
+        "rule-04-urgent"
+      ],
+      "reference_answer": "应由组长审批，并至少提供3家供应商报价。"
+    },
+    {
+      "case_id": "rule-05-a",
+      "bucket": "business_rule_qa",
+      "question": "按POL-05执行一笔6300元的紧急采购，需要谁审批并准备多少家报价？",
+      "expected_memory_ids": [
+        "rule-05-amount",
+        "rule-05-urgent"
+      ],
+      "reference_answer": "需要业务总监审批，并至少提供4家供应商报价。"
+    },
+    {
+      "case_id": "rule-05-b",
+      "bucket": "business_rule_qa",
+      "question": "按POL-05完成采购后第12天才提交发票，是否合规？",
+      "expected_memory_ids": [
+        "rule-05-invoice"
+      ],
+      "reference_answer": "不合规，已超过10个自然日，需要补充逾期说明。"
+    },
+    {
+      "case_id": "rule-05-c",
+      "bucket": "business_rule_qa",
+      "question": "按POL-05进行5300元紧急采购，应由谁审批，还要满足什么报价要求？",
+      "expected_memory_ids": [
+        "rule-05-amount",
+        "rule-05-urgent"
+      ],
+      "reference_answer": "应由组长审批，并至少提供4家供应商报价。"
+    },
+    {
+      "case_id": "rule-06-a",
+      "bucket": "business_rule_qa",
+      "question": "按POL-06执行一笔6800元的紧急采购，需要谁审批并准备多少家报价？",
+      "expected_memory_ids": [
+        "rule-06-amount",
+        "rule-06-urgent"
+      ],
+      "reference_answer": "需要财务负责人审批，并至少提供2家供应商报价。"
+    },
+    {
+      "case_id": "rule-06-b",
+      "bucket": "business_rule_qa",
+      "question": "按POL-06完成采购后第7天才提交发票，是否合规？",
+      "expected_memory_ids": [
+        "rule-06-invoice"
+      ],
+      "reference_answer": "不合规，已超过5个自然日，需要补充逾期说明。"
+    },
+    {
+      "case_id": "rule-06-c",
+      "bucket": "business_rule_qa",
+      "question": "按POL-06进行5800元紧急采购，应由谁审批，还要满足什么报价要求？",
+      "expected_memory_ids": [
+        "rule-06-amount",
+        "rule-06-urgent"
+      ],
+      "reference_answer": "应由组长审批，并至少提供2家供应商报价。"
+    },
+    {
+      "case_id": "rule-07-a",
+      "bucket": "business_rule_qa",
+      "question": "按POL-07执行一笔7300元的紧急采购，需要谁审批并准备多少家报价？",
+      "expected_memory_ids": [
+        "rule-07-amount",
+        "rule-07-urgent"
+      ],
+      "reference_answer": "需要采购负责人审批，并至少提供3家供应商报价。"
+    },
+    {
+      "case_id": "rule-07-b",
+      "bucket": "business_rule_qa",
+      "question": "按POL-07完成采购后第8天才提交发票，是否合规？",
+      "expected_memory_ids": [
+        "rule-07-invoice"
+      ],
+      "reference_answer": "不合规，已超过6个自然日，需要补充逾期说明。"
+    },
+    {
+      "case_id": "rule-07-c",
+      "bucket": "business_rule_qa",
+      "question": "按POL-07进行6300元紧急采购，应由谁审批，还要满足什么报价要求？",
+      "expected_memory_ids": [
+        "rule-07-amount",
+        "rule-07-urgent"
+      ],
+      "reference_answer": "应由组长审批，并至少提供3家供应商报价。"
+    },
+    {
+      "case_id": "rule-08-a",
+      "bucket": "business_rule_qa",
+      "question": "按POL-08执行一笔7800元的紧急采购，需要谁审批并准备多少家报价？",
+      "expected_memory_ids": [
+        "rule-08-amount",
+        "rule-08-urgent"
+      ],
+      "reference_answer": "需要部门经理审批，并至少提供4家供应商报价。"
+    },
+    {
+      "case_id": "rule-08-b",
+      "bucket": "business_rule_qa",
+      "question": "按POL-08完成采购后第9天才提交发票，是否合规？",
+      "expected_memory_ids": [
+        "rule-08-invoice"
+      ],
+      "reference_answer": "不合规，已超过7个自然日，需要补充逾期说明。"
+    },
+    {
+      "case_id": "rule-08-c",
+      "bucket": "business_rule_qa",
+      "question": "按POL-08进行6800元紧急采购，应由谁审批，还要满足什么报价要求？",
+      "expected_memory_ids": [
+        "rule-08-amount",
+        "rule-08-urgent"
+      ],
+      "reference_answer": "应由组长审批，并至少提供4家供应商报价。"
+    },
+    {
+      "case_id": "rule-09-a",
+      "bucket": "business_rule_qa",
+      "question": "按POL-09执行一笔8300元的紧急采购，需要谁审批并准备多少家报价？",
+      "expected_memory_ids": [
+        "rule-09-amount",
+        "rule-09-urgent"
+      ],
+      "reference_answer": "需要业务总监审批，并至少提供2家供应商报价。"
+    },
+    {
+      "case_id": "rule-09-b",
+      "bucket": "business_rule_qa",
+      "question": "按POL-09完成采购后第10天才提交发票，是否合规？",
+      "expected_memory_ids": [
+        "rule-09-invoice"
+      ],
+      "reference_answer": "不合规，已超过8个自然日，需要补充逾期说明。"
+    },
+    {
+      "case_id": "rule-09-c",
+      "bucket": "business_rule_qa",
+      "question": "按POL-09进行7300元紧急采购，应由谁审批，还要满足什么报价要求？",
+      "expected_memory_ids": [
+        "rule-09-amount",
+        "rule-09-urgent"
+      ],
+      "reference_answer": "应由组长审批，并至少提供2家供应商报价。"
+    },
+    {
+      "case_id": "rule-10-a",
+      "bucket": "business_rule_qa",
+      "question": "按POL-10执行一笔8800元的紧急采购，需要谁审批并准备多少家报价？",
+      "expected_memory_ids": [
+        "rule-10-amount",
+        "rule-10-urgent"
+      ],
+      "reference_answer": "需要财务负责人审批，并至少提供3家供应商报价。"
+    },
+    {
+      "case_id": "rule-10-b",
+      "bucket": "business_rule_qa",
+      "question": "按POL-10完成采购后第11天才提交发票，是否合规？",
+      "expected_memory_ids": [
+        "rule-10-invoice"
+      ],
+      "reference_answer": "不合规，已超过9个自然日，需要补充逾期说明。"
+    },
+    {
+      "case_id": "rule-10-c",
+      "bucket": "business_rule_qa",
+      "question": "按POL-10进行7800元紧急采购，应由谁审批，还要满足什么报价要求？",
+      "expected_memory_ids": [
+        "rule-10-amount",
+        "rule-10-urgent"
+      ],
+      "reference_answer": "应由组长审批，并至少提供3家供应商报价。"
+    },
+    {
+      "case_id": "rule-11-a",
+      "bucket": "business_rule_qa",
+      "question": "按POL-11执行一笔9300元的紧急采购，需要谁审批并准备多少家报价？",
+      "expected_memory_ids": [
+        "rule-11-amount",
+        "rule-11-urgent"
+      ],
+      "reference_answer": "需要采购负责人审批，并至少提供4家供应商报价。"
+    },
+    {
+      "case_id": "rule-11-b",
+      "bucket": "business_rule_qa",
+      "question": "按POL-11完成采购后第12天才提交发票，是否合规？",
+      "expected_memory_ids": [
+        "rule-11-invoice"
+      ],
+      "reference_answer": "不合规，已超过10个自然日，需要补充逾期说明。"
+    },
+    {
+      "case_id": "rule-11-c",
+      "bucket": "business_rule_qa",
+      "question": "按POL-11进行8300元紧急采购，应由谁审批，还要满足什么报价要求？",
+      "expected_memory_ids": [
+        "rule-11-amount",
+        "rule-11-urgent"
+      ],
+      "reference_answer": "应由组长审批，并至少提供4家供应商报价。"
+    },
+    {
+      "case_id": "rule-12-a",
+      "bucket": "business_rule_qa",
+      "question": "按POL-12执行一笔9800元的紧急采购，需要谁审批并准备多少家报价？",
+      "expected_memory_ids": [
+        "rule-12-amount",
+        "rule-12-urgent"
+      ],
+      "reference_answer": "需要部门经理审批，并至少提供2家供应商报价。"
+    },
+    {
+      "case_id": "rule-12-b",
+      "bucket": "business_rule_qa",
+      "question": "按POL-12完成采购后第7天才提交发票，是否合规？",
+      "expected_memory_ids": [
+        "rule-12-invoice"
+      ],
+      "reference_answer": "不合规，已超过5个自然日，需要补充逾期说明。"
+    },
+    {
+      "case_id": "rule-12-c",
+      "bucket": "business_rule_qa",
+      "question": "按POL-12进行8800元紧急采购，应由谁审批，还要满足什么报价要求？",
+      "expected_memory_ids": [
+        "rule-12-amount",
+        "rule-12-urgent"
+      ],
+      "reference_answer": "应由组长审批，并至少提供2家供应商报价。"
+    },
+    {
+      "case_id": "rule-13-a",
+      "bucket": "business_rule_qa",
+      "question": "按POL-13执行一笔10300元的紧急采购，需要谁审批并准备多少家报价？",
+      "expected_memory_ids": [
+        "rule-13-amount",
+        "rule-13-urgent"
+      ],
+      "reference_answer": "需要业务总监审批，并至少提供3家供应商报价。"
+    },
+    {
+      "case_id": "rule-13-b",
+      "bucket": "business_rule_qa",
+      "question": "按POL-13完成采购后第8天才提交发票，是否合规？",
+      "expected_memory_ids": [
+        "rule-13-invoice"
+      ],
+      "reference_answer": "不合规，已超过6个自然日，需要补充逾期说明。"
+    },
+    {
+      "case_id": "rule-13-c",
+      "bucket": "business_rule_qa",
+      "question": "按POL-13进行9300元紧急采购，应由谁审批，还要满足什么报价要求？",
+      "expected_memory_ids": [
+        "rule-13-amount",
+        "rule-13-urgent"
+      ],
+      "reference_answer": "应由组长审批，并至少提供3家供应商报价。"
+    },
+    {
+      "case_id": "rule-14-a",
+      "bucket": "business_rule_qa",
+      "question": "按POL-14执行一笔10800元的紧急采购，需要谁审批并准备多少家报价？",
+      "expected_memory_ids": [
+        "rule-14-amount",
+        "rule-14-urgent"
+      ],
+      "reference_answer": "需要财务负责人审批，并至少提供4家供应商报价。"
+    },
+    {
+      "case_id": "rule-14-b",
+      "bucket": "business_rule_qa",
+      "question": "按POL-14完成采购后第9天才提交发票，是否合规？",
+      "expected_memory_ids": [
+        "rule-14-invoice"
+      ],
+      "reference_answer": "不合规，已超过7个自然日，需要补充逾期说明。"
+    },
+    {
+      "case_id": "rule-14-c",
+      "bucket": "business_rule_qa",
+      "question": "按POL-14进行9800元紧急采购，应由谁审批，还要满足什么报价要求？",
+      "expected_memory_ids": [
+        "rule-14-amount",
+        "rule-14-urgent"
+      ],
+      "reference_answer": "应由组长审批，并至少提供4家供应商报价。"
+    },
+    {
+      "case_id": "rule-15-a",
+      "bucket": "business_rule_qa",
+      "question": "按POL-15执行一笔11300元的紧急采购，需要谁审批并准备多少家报价？",
+      "expected_memory_ids": [
+        "rule-15-amount",
+        "rule-15-urgent"
+      ],
+      "reference_answer": "需要采购负责人审批，并至少提供2家供应商报价。"
+    },
+    {
+      "case_id": "rule-15-b",
+      "bucket": "business_rule_qa",
+      "question": "按POL-15完成采购后第10天才提交发票，是否合规？",
+      "expected_memory_ids": [
+        "rule-15-invoice"
+      ],
+      "reference_answer": "不合规，已超过8个自然日，需要补充逾期说明。"
+    },
+    {
+      "case_id": "rule-15-c",
+      "bucket": "business_rule_qa",
+      "question": "按POL-15进行10300元紧急采购，应由谁审批，还要满足什么报价要求？",
+      "expected_memory_ids": [
+        "rule-15-amount",
+        "rule-15-urgent"
+      ],
+      "reference_answer": "应由组长审批，并至少提供2家供应商报价。"
+    },
+    {
+      "case_id": "rule-16-a",
+      "bucket": "business_rule_qa",
+      "question": "按POL-16执行一笔11800元的紧急采购，需要谁审批并准备多少家报价？",
+      "expected_memory_ids": [
+        "rule-16-amount",
+        "rule-16-urgent"
+      ],
+      "reference_answer": "需要部门经理审批，并至少提供3家供应商报价。"
+    },
+    {
+      "case_id": "rule-16-b",
+      "bucket": "business_rule_qa",
+      "question": "按POL-16完成采购后第11天才提交发票，是否合规？",
+      "expected_memory_ids": [
+        "rule-16-invoice"
+      ],
+      "reference_answer": "不合规，已超过9个自然日，需要补充逾期说明。"
+    },
+    {
+      "case_id": "rule-16-c",
+      "bucket": "business_rule_qa",
+      "question": "按POL-16进行10800元紧急采购，应由谁审批，还要满足什么报价要求？",
+      "expected_memory_ids": [
+        "rule-16-amount",
+        "rule-16-urgent"
+      ],
+      "reference_answer": "应由组长审批，并至少提供3家供应商报价。"
+    },
+    {
+      "case_id": "rule-17-a",
+      "bucket": "business_rule_qa",
+      "question": "按POL-17执行一笔12300元的紧急采购，需要谁审批并准备多少家报价？",
+      "expected_memory_ids": [
+        "rule-17-amount",
+        "rule-17-urgent"
+      ],
+      "reference_answer": "需要业务总监审批，并至少提供4家供应商报价。"
+    },
+    {
+      "case_id": "rule-17-b",
+      "bucket": "business_rule_qa",
+      "question": "按POL-17完成采购后第12天才提交发票，是否合规？",
+      "expected_memory_ids": [
+        "rule-17-invoice"
+      ],
+      "reference_answer": "不合规，已超过10个自然日，需要补充逾期说明。"
+    },
+    {
+      "case_id": "rule-17-c",
+      "bucket": "business_rule_qa",
+      "question": "按POL-17进行11300元紧急采购，应由谁审批，还要满足什么报价要求？",
+      "expected_memory_ids": [
+        "rule-17-amount",
+        "rule-17-urgent"
+      ],
+      "reference_answer": "应由组长审批，并至少提供4家供应商报价。"
+    },
+    {
+      "case_id": "rule-18-a",
+      "bucket": "business_rule_qa",
+      "question": "按POL-18执行一笔12800元的紧急采购，需要谁审批并准备多少家报价？",
+      "expected_memory_ids": [
+        "rule-18-amount",
+        "rule-18-urgent"
+      ],
+      "reference_answer": "需要财务负责人审批，并至少提供2家供应商报价。"
+    },
+    {
+      "case_id": "rule-18-b",
+      "bucket": "business_rule_qa",
+      "question": "按POL-18完成采购后第7天才提交发票，是否合规？",
+      "expected_memory_ids": [
+        "rule-18-invoice"
+      ],
+      "reference_answer": "不合规，已超过5个自然日，需要补充逾期说明。"
+    },
+    {
+      "case_id": "rule-18-c",
+      "bucket": "business_rule_qa",
+      "question": "按POL-18进行11800元紧急采购，应由谁审批，还要满足什么报价要求？",
+      "expected_memory_ids": [
+        "rule-18-amount",
+        "rule-18-urgent"
+      ],
+      "reference_answer": "应由组长审批，并至少提供2家供应商报价。"
+    },
+    {
+      "case_id": "rule-19-a",
+      "bucket": "business_rule_qa",
+      "question": "按POL-19执行一笔13300元的紧急采购，需要谁审批并准备多少家报价？",
+      "expected_memory_ids": [
+        "rule-19-amount",
+        "rule-19-urgent"
+      ],
+      "reference_answer": "需要采购负责人审批，并至少提供3家供应商报价。"
+    },
+    {
+      "case_id": "rule-19-b",
+      "bucket": "business_rule_qa",
+      "question": "按POL-19完成采购后第8天才提交发票，是否合规？",
+      "expected_memory_ids": [
+        "rule-19-invoice"
+      ],
+      "reference_answer": "不合规，已超过6个自然日，需要补充逾期说明。"
+    },
+    {
+      "case_id": "rule-19-c",
+      "bucket": "business_rule_qa",
+      "question": "按POL-19进行12300元紧急采购，应由谁审批，还要满足什么报价要求？",
+      "expected_memory_ids": [
+        "rule-19-amount",
+        "rule-19-urgent"
+      ],
+      "reference_answer": "应由组长审批，并至少提供3家供应商报价。"
+    },
+    {
+      "case_id": "rule-20-a",
+      "bucket": "business_rule_qa",
+      "question": "按POL-20执行一笔13800元的紧急采购，需要谁审批并准备多少家报价？",
+      "expected_memory_ids": [
+        "rule-20-amount",
+        "rule-20-urgent"
+      ],
+      "reference_answer": "需要部门经理审批，并至少提供4家供应商报价。"
+    },
+    {
+      "case_id": "rule-20-b",
+      "bucket": "business_rule_qa",
+      "question": "按POL-20完成采购后第9天才提交发票，是否合规？",
+      "expected_memory_ids": [
+        "rule-20-invoice"
+      ],
+      "reference_answer": "不合规，已超过7个自然日，需要补充逾期说明。"
+    },
+    {
+      "case_id": "rule-20-c",
+      "bucket": "business_rule_qa",
+      "question": "按POL-20进行12800元紧急采购，应由谁审批，还要满足什么报价要求？",
+      "expected_memory_ids": [
+        "rule-20-amount",
+        "rule-20-urgent"
+      ],
+      "reference_answer": "应由组长审批，并至少提供4家供应商报价。"
+    }
+  ]
+}

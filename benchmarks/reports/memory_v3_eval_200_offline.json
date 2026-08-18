@@ -1,0 +1,540 @@
+{
+  "mode": "offline",
+  "generation": "none",
+  "top_k": 5,
+  "dataset": {
+    "name": "nodeclaw-memory-v3-eval-200",
+    "version": "1.0.0",
+    "memories": 200,
+    "cases": 200,
+    "bucket_counts": {
+      "fact_qa": 80,
+      "multi_hop_qa": 60,
+      "business_rule_qa": 60
+    }
+  },
+  "overall": {
+    "cases": 200,
+    "recall_at_5": 0.945,
+    "mrr": 0.9052,
+    "faithfulness": null,
+    "retrieval_latency_p95_ms": 0.1426,
+    "generation_latency_p95_ms": null,
+    "response_latency_p95_ms": null,
+    "judge_latency_p95_ms": null
+  },
+  "buckets": {
+    "fact_qa": {
+      "cases": 80,
+      "recall_at_5": 1.0,
+      "mrr": 0.8875,
+      "faithfulness": null,
+      "retrieval_latency_p95_ms": 0.0917,
+      "generation_latency_p95_ms": null,
+      "response_latency_p95_ms": null,
+      "judge_latency_p95_ms": null
+    },
+    "multi_hop_qa": {
+      "cases": 60,
+      "recall_at_5": 0.8167,
+      "mrr": 1.0,
+      "faithfulness": null,
+      "retrieval_latency_p95_ms": 0.129,
+      "generation_latency_p95_ms": null,
+      "response_latency_p95_ms": null,
+      "judge_latency_p95_ms": null
+    },
+    "business_rule_qa": {
+      "cases": 60,
+      "recall_at_5": 1.0,
+      "mrr": 0.8339,
+      "faithfulness": null,
+      "retrieval_latency_p95_ms": 0.1506,
+      "generation_latency_p95_ms": null,
+      "response_latency_p95_ms": null,
+      "judge_latency_p95_ms": null
+    }
+  },
+  "worst_cases": [
+    {
+      "case_id": "multi-01-c",
+      "bucket": "multi_hop_qa",
+      "recall_at_5": 0.5,
+      "mrr": 1.0,
+      "retrieved": [
+        "multi-01-owner",
+        "fact-030",
+        "fact-029",
+        "fact-028",
+        "fact-027"
+      ],
+      "expected": [
+        "multi-01-owner",
+        "multi-01-plan"
+      ],
+      "answer": null,
+      "faithfulness": null,
+      "unsupported_claims": [],
+      "retrieval_latency_ms": 0.13450009282678366,
+      "generation_latency_ms": null,
+      "response_latency_ms": null,
+      "judge_latency_ms": null
+    },
+    {
+      "case_id": "multi-02-c",
+      "bucket": "multi_hop_qa",
+      "recall_at_5": 0.5,
+      "mrr": 1.0,
+      "retrieved": [
+        "multi-02-owner",
+        "fact-030",
+        "fact-029",
+        "fact-028",
+        "fact-027"
+      ],
+      "expected": [
+        "multi-02-owner",
+        "multi-02-plan"
+      ],
+      "answer": null,
+      "faithfulness": null,
+      "unsupported_claims": [],
+      "retrieval_latency_ms": 0.12941693421453238,
+      "generation_latency_ms": null,
+      "response_latency_ms": null,
+      "judge_latency_ms": null
+    },
+    {
+      "case_id": "multi-03-c",
+      "bucket": "multi_hop_qa",
+      "recall_at_5": 0.5,
+      "mrr": 1.0,
+      "retrieved": [
+        "multi-03-owner",
+        "fact-030",
+        "fact-029",
+        "fact-028",
+        "fact-027"
+      ],
+      "expected": [
+        "multi-03-owner",
+        "multi-03-plan"
+      ],
+      "answer": null,
+      "faithfulness": null,
+      "unsupported_claims": [],
+      "retrieval_latency_ms": 0.12904196046292782,
+      "generation_latency_ms": null,
+      "response_latency_ms": null,
+      "judge_latency_ms": null
+    },
+    {
+      "case_id": "multi-04-c",
+      "bucket": "multi_hop_qa",
+      "recall_at_5": 0.5,
+      "mrr": 1.0,
+      "retrieved": [
+        "multi-04-owner",
+        "fact-030",
+        "fact-029",
+        "fact-028",
+        "fact-027"
+      ],
+      "expected": [
+        "multi-04-owner",
+        "multi-04-plan"
+      ],
+      "answer": null,
+      "faithfulness": null,
+      "unsupported_claims": [],
+      "retrieval_latency_ms": 0.12874999083578587,
+      "generation_latency_ms": null,
+      "response_latency_ms": null,
+      "judge_latency_ms": null
+    },
+    {
+      "case_id": "multi-05-c",
+      "bucket": "multi_hop_qa",
+      "recall_at_5": 0.5,
+      "mrr": 1.0,
+      "retrieved": [
+        "multi-05-owner",
+        "fact-030",
+        "fact-029",
+        "fact-028",
+        "fact-027"
+      ],
+      "expected": [
+        "multi-05-owner",
+        "multi-05-plan"
+      ],
+      "answer": null,
+      "faithfulness": null,
+      "unsupported_claims": [],
+      "retrieval_latency_ms": 0.12550002429634333,
+      "generation_latency_ms": null,
+      "response_latency_ms": null,
+      "judge_latency_ms": null
+    },
+    {
+      "case_id": "multi-06-c",
+      "bucket": "multi_hop_qa",
+      "recall_at_5": 0.5,
+      "mrr": 1.0,
+      "retrieved": [
+        "multi-06-owner",
+        "fact-030",
+        "fact-029",
+        "fact-028",
+        "fact-027"
+      ],
+      "expected": [
+        "multi-06-owner",
+        "multi-06-plan"
+      ],
+      "answer": null,
+      "faithfulness": null,
+      "unsupported_claims": [],
+      "retrieval_latency_ms": 0.12220896314829588,
+      "generation_latency_ms": null,
+      "response_latency_ms": null,
+      "judge_latency_ms": null
+    },
+    {
+      "case_id": "multi-07-c",
+      "bucket": "multi_hop_qa",
+      "recall_at_5": 0.5,
+      "mrr": 1.0,
+      "retrieved": [
+        "multi-07-owner",
+        "fact-030",
+        "fact-029",
+        "fact-028",
+        "fact-027"
+      ],
+      "expected": [
+        "multi-07-owner",
+        "multi-07-plan"
+      ],
+      "answer": null,
+      "faithfulness": null,
+      "unsupported_claims": [],
+      "retrieval_latency_ms": 0.12224994134157896,
+      "generation_latency_ms": null,
+      "response_latency_ms": null,
+      "judge_latency_ms": null
+    },
+    {
+      "case_id": "multi-08-c",
+      "bucket": "multi_hop_qa",
+      "recall_at_5": 0.5,
+      "mrr": 1.0,
+      "retrieved": [
+        "multi-08-owner",
+        "fact-030",
+        "fact-029",
+        "fact-028",
+        "fact-027"
+      ],
+      "expected": [
+        "multi-08-owner",
+        "multi-08-plan"
+      ],
+      "answer": null,
+      "faithfulness": null,
+      "unsupported_claims": [],
+      "retrieval_latency_ms": 0.12045796029269695,
+      "generation_latency_ms": null,
+      "response_latency_ms": null,
+      "judge_latency_ms": null
+    },
+    {
+      "case_id": "multi-09-c",
+      "bucket": "multi_hop_qa",
+      "recall_at_5": 0.5,
+      "mrr": 1.0,
+      "retrieved": [
+        "multi-09-owner",
+        "fact-030",
+        "fact-029",
+        "fact-028",
+        "fact-027"
+      ],
+      "expected": [
+        "multi-09-owner",
+        "multi-09-plan"
+      ],
+      "answer": null,
+      "faithfulness": null,
+      "unsupported_claims": [],
+      "retrieval_latency_ms": 0.12037495616823435,
+      "generation_latency_ms": null,
+      "response_latency_ms": null,
+      "judge_latency_ms": null
+    },
+    {
+      "case_id": "multi-10-c",
+      "bucket": "multi_hop_qa",
+      "recall_at_5": 0.5,
+      "mrr": 1.0,
+      "retrieved": [
+        "multi-10-owner",
+        "fact-030",
+        "fact-029",
+        "fact-028",
+        "fact-027"
+      ],
+      "expected": [
+        "multi-10-owner",
+        "multi-10-plan"
+      ],
+      "answer": null,
+      "faithfulness": null,
+      "unsupported_claims": [],
+      "retrieval_latency_ms": 0.12408301699906588,
+      "generation_latency_ms": null,
+      "response_latency_ms": null,
+      "judge_latency_ms": null
+    },
+    {
+      "case_id": "multi-11-c",
+      "bucket": "multi_hop_qa",
+      "recall_at_5": 0.5,
+      "mrr": 1.0,
+      "retrieved": [
+        "multi-11-owner",
+        "fact-030",
+        "fact-029",
+        "fact-028",
+        "fact-027"
+      ],
+      "expected": [
+        "multi-11-owner",
+        "multi-11-plan"
+      ],
+      "answer": null,
+      "faithfulness": null,
+      "unsupported_claims": [],
+      "retrieval_latency_ms": 0.12191699352115393,
+      "generation_latency_ms": null,
+      "response_latency_ms": null,
+      "judge_latency_ms": null
+    },
+    {
+      "case_id": "multi-12-a",
+      "bucket": "multi_hop_qa",
+      "recall_at_5": 0.5,
+      "mrr": 1.0,
+      "retrieved": [
+        "multi-12-tech",
+        "multi-20-tech",
+        "multi-19-tech",
+        "multi-18-tech",
+        "multi-17-tech"
+      ],
+      "expected": [
+        "multi-12-owner",
+        "multi-12-tech"
+      ],
+      "answer": null,
+      "faithfulness": null,
+      "unsupported_claims": [],
+      "retrieval_latency_ms": 0.11570798233151436,
+      "generation_latency_ms": null,
+      "response_latency_ms": null,
+      "judge_latency_ms": null
+    },
+    {
+      "case_id": "multi-12-c",
+      "bucket": "multi_hop_qa",
+      "recall_at_5": 0.5,
+      "mrr": 1.0,
+      "retrieved": [
+        "multi-12-owner",
+        "fact-030",
+        "fact-029",
+        "fact-028",
+        "fact-027"
+      ],
+      "expected": [
+        "multi-12-owner",
+        "multi-12-plan"
+      ],
+      "answer": null,
+      "faithfulness": null,
+      "unsupported_claims": [],
+      "retrieval_latency_ms": 0.1265000319108367,
+      "generation_latency_ms": null,
+      "response_latency_ms": null,
+      "judge_latency_ms": null
+    },
+    {
+      "case_id": "multi-13-c",
+      "bucket": "multi_hop_qa",
+      "recall_at_5": 0.5,
+      "mrr": 1.0,
+      "retrieved": [
+        "multi-13-owner",
+        "fact-030",
+        "fact-029",
+        "fact-028",
+        "fact-027"
+      ],
+      "expected": [
+        "multi-13-owner",
+        "multi-13-plan"
+      ],
+      "answer": null,
+      "faithfulness": null,
+      "unsupported_claims": [],
+      "retrieval_latency_ms": 0.12504193000495434,
+      "generation_latency_ms": null,
+      "response_latency_ms": null,
+      "judge_latency_ms": null
+    },
+    {
+      "case_id": "multi-14-a",
+      "bucket": "multi_hop_qa",
+      "recall_at_5": 0.5,
+      "mrr": 1.0,
+      "retrieved": [
+        "multi-14-tech",
+        "multi-20-tech",
+        "multi-19-tech",
+        "multi-18-tech",
+        "multi-17-tech"
+      ],
+      "expected": [
+        "multi-14-owner",
+        "multi-14-tech"
+      ],
+      "answer": null,
+      "faithfulness": null,
+      "unsupported_claims": [],
+      "retrieval_latency_ms": 0.11637492571026087,
+      "generation_latency_ms": null,
+      "response_latency_ms": null,
+      "judge_latency_ms": null
+    },
+    {
+      "case_id": "multi-14-c",
+      "bucket": "multi_hop_qa",
+      "recall_at_5": 0.5,
+      "mrr": 1.0,
+      "retrieved": [
+        "multi-14-owner",
+        "fact-030",
+        "fact-029",
+        "fact-028",
+        "fact-027"
+      ],
+      "expected": [
+        "multi-14-owner",
+        "multi-14-plan"
+      ],
+      "answer": null,
+      "faithfulness": null,
+      "unsupported_claims": [],
+      "retrieval_latency_ms": 0.12770795729011297,
+      "generation_latency_ms": null,
+      "response_latency_ms": null,
+      "judge_latency_ms": null
+    },
+    {
+      "case_id": "multi-15-c",
+      "bucket": "multi_hop_qa",
+      "recall_at_5": 0.5,
+      "mrr": 1.0,
+      "retrieved": [
+        "multi-15-owner",
+        "fact-030",
+        "fact-029",
+        "fact-028",
+        "fact-027"
+      ],
+      "expected": [
+        "multi-15-owner",
+        "multi-15-plan"
+      ],
+      "answer": null,
+      "faithfulness": null,
+      "unsupported_claims": [],
+      "retrieval_latency_ms": 0.1289580250158906,
+      "generation_latency_ms": null,
+      "response_latency_ms": null,
+      "judge_latency_ms": null
+    },
+    {
+      "case_id": "multi-16-c",
+      "bucket": "multi_hop_qa",
+      "recall_at_5": 0.5,
+      "mrr": 1.0,
+      "retrieved": [
+        "multi-16-owner",
+        "fact-030",
+        "fact-029",
+        "fact-028",
+        "fact-027"
+      ],
+      "expected": [
+        "multi-16-owner",
+        "multi-16-plan"
+      ],
+      "answer": null,
+      "faithfulness": null,
+      "unsupported_claims": [],
+      "retrieval_latency_ms": 0.12895790860056877,
+      "generation_latency_ms": null,
+      "response_latency_ms": null,
+      "judge_latency_ms": null
+    },
+    {
+      "case_id": "multi-17-c",
+      "bucket": "multi_hop_qa",
+      "recall_at_5": 0.5,
+      "mrr": 1.0,
+      "retrieved": [
+        "multi-17-owner",
+        "fact-030",
+        "fact-029",
+        "fact-028",
+        "fact-027"
+      ],
+      "expected": [
+        "multi-17-owner",
+        "multi-17-plan"
+      ],
+      "answer": null,
+      "faithfulness": null,
+      "unsupported_claims": [],
+      "retrieval_latency_ms": 0.1231249189004302,
+      "generation_latency_ms": null,
+      "response_latency_ms": null,
+      "judge_latency_ms": null
+    },
+    {
+      "case_id": "multi-18-c",
+      "bucket": "multi_hop_qa",
+      "recall_at_5": 0.5,
+      "mrr": 1.0,
+      "retrieved": [
+        "multi-18-owner",
+        "fact-030",
+        "fact-029",
+        "fact-028",
+        "fact-027"
+      ],
+      "expected": [
+        "multi-18-owner",
+        "multi-18-plan"
+      ],
+      "answer": null,
+      "faithfulness": null,
+      "unsupported_claims": [],
+      "retrieval_latency_ms": 0.12191699352115393,
+      "generation_latency_ms": null,
+      "response_latency_ms": null,
+      "judge_latency_ms": null
+    }
+  ]
+}

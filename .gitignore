@@ -1,0 +1,41 @@
+# OS and editors
+.DS_Store
+*:Zone.Identifier
+.vscode/
+.idea/
+*.swp
+
+# Secrets and local environments
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+
+# Python and build artifacts
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Runtime state
+logs/
+storage/
+celerybeat-schedule*
+*.sqlite
+*.sqlite3
+*.db
+
+# Local user content
+tmp_resume*/
+*.docx
+docs/node_logo_old.png
+workspace/office/notes.txt
+workspace/office/notes/
+workspace/mcp_servers.json

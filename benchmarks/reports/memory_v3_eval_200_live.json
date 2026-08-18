@@ -1,0 +1,546 @@
+{
+  "mode": "live",
+  "generation": "llm",
+  "top_k": 5,
+  "dataset": {
+    "name": "nodeclaw-memory-v3-eval-200",
+    "version": "1.0.0",
+    "memories": 200,
+    "cases": 200,
+    "bucket_counts": {
+      "fact_qa": 80,
+      "multi_hop_qa": 60,
+      "business_rule_qa": 60
+    }
+  },
+  "overall": {
+    "cases": 200,
+    "recall_at_5": 0.95,
+    "mrr": 0.9677,
+    "faithfulness": 0.9875,
+    "retrieval_latency_p95_ms": 333.3244,
+    "generation_latency_p95_ms": 2423.009,
+    "response_latency_p95_ms": 2767.534,
+    "judge_latency_p95_ms": 2801.6131
+  },
+  "buckets": {
+    "fact_qa": {
+      "cases": 80,
+      "recall_at_5": 1.0,
+      "mrr": 1.0,
+      "faithfulness": 1.0,
+      "retrieval_latency_p95_ms": 315.0795,
+      "generation_latency_p95_ms": 895.9295,
+      "response_latency_p95_ms": 1122.6331,
+      "judge_latency_p95_ms": 1181.8555
+    },
+    "multi_hop_qa": {
+      "cases": 60,
+      "recall_at_5": 1.0,
+      "mrr": 0.975,
+      "faithfulness": 1.0,
+      "retrieval_latency_p95_ms": 310.3022,
+      "generation_latency_p95_ms": 962.9513,
+      "response_latency_p95_ms": 1225.5138,
+      "judge_latency_p95_ms": 1638.4718
+    },
+    "business_rule_qa": {
+      "cases": 60,
+      "recall_at_5": 0.8333,
+      "mrr": 0.9172,
+      "faithfulness": 0.9583,
+      "retrieval_latency_p95_ms": 360.6088,
+      "generation_latency_p95_ms": 3198.1699,
+      "response_latency_p95_ms": 3532.9273,
+      "judge_latency_p95_ms": 3807.2966
+    }
+  },
+  "worst_cases": [
+    {
+      "case_id": "rule-06-a",
+      "bucket": "business_rule_qa",
+      "recall_at_5": 0.5,
+      "mrr": 1.0,
+      "retrieved": [
+        "rule-06-urgent",
+        "rule-07-urgent",
+        "rule-01-urgent",
+        "rule-05-urgent",
+        "rule-09-urgent"
+      ],
+      "expected": [
+        "rule-06-amount",
+        "rule-06-urgent"
+      ],
+      "answer": "根据记忆，POL-06未在提供的规则中明确说明（[rule-06-urgent] 未出现）。现有规则仅列出了 POL-01、POL-05、POL-07、POL-09 对紧急采购的报价家数要求，但无 POL-06 的对应条目。\n\n因此，**根据现有记忆无法确定**按 POL-06 执行紧急采购需准备多少家报价，也无法确定审批人（记忆中未提供任何关于审批权限的信息）。\n\n答案：根据现有记忆无法确定。",
+      "faithfulness": 0.75,
+      "unsupported_claims": [
+        "根据现有记忆无法确定按POL-06执行紧急采购需准备多少家报价。"
+      ],
+      "retrieval_latency_ms": 287.5484579708427,
+      "generation_latency_ms": 3318.9853749936447,
+      "response_latency_ms": 3606.5338329644874,
+      "judge_latency_ms": 2577.7047079754993
+    },
+    {
+      "case_id": "rule-12-a",
+      "bucket": "business_rule_qa",
+      "recall_at_5": 0.5,
+      "mrr": 1.0,
+      "retrieved": [
+        "rule-12-urgent",
+        "rule-01-urgent",
+        "rule-08-urgent",
+        "rule-03-urgent",
+        "rule-10-urgent"
+      ],
+      "expected": [
+        "rule-12-amount",
+        "rule-12-urgent"
+      ],
+      "answer": "根据记忆，POL-12对应规则为[rule-12-urgent]，规定紧急采购须至少提供**2家供应商报价**。\n\n但记忆中**未提及POL-12下审批人信息**。\n\n因此：  \n- 需准备**2家报价**；  \n- 审批人：**根据现有记忆无法确定**。",
+      "faithfulness": 0.8,
+      "unsupported_claims": [
+        "POL-12对应规则为[rule-12-urgent]"
+      ],
+      "retrieval_latency_ms": 225.1293750014156,
+      "generation_latency_ms": 2019.8670829413459,
+      "response_latency_ms": 2244.9964579427615,
+      "judge_latency_ms": 2507.570750080049
+    },
+    {
+      "case_id": "rule-01-a",
+      "bucket": "business_rule_qa",
+      "recall_at_5": 0.5,
+      "mrr": 1.0,
+      "retrieved": [
+        "rule-01-urgent",
+        "rule-03-urgent",
+        "rule-04-urgent",
+        "rule-02-urgent",
+        "rule-07-urgent"
+      ],
+      "expected": [
+        "rule-01-amount",
+        "rule-01-urgent"
+      ],
+      "answer": "根据记忆，POL-01对应规则为[rule-01-urgent]，规定紧急采购须至少提供**3家供应商报价**。\n\n但记忆中**未提及POL-01规定的审批人**，也未说明4300元金额对应的审批层级。\n\n因此：  \n- 需准备**3家报价**；  \n- **审批人无法确定**（根据现有记忆无法确定）。",
+      "faithfulness": 0.8333333333333334,
+      "unsupported_claims": [
+        "POL-01对应规则为[rule-01-urgent]"
+      ],
+      "retrieval_latency_ms": 599.9039580347016,
+      "generation_latency_ms": 2392.680500051938,
+      "response_latency_ms": 2992.5844580866396,
+      "judge_latency_ms": 4192.873999942094
+    },
+    {
+      "case_id": "rule-02-a",
+      "bucket": "business_rule_qa",
+      "recall_at_5": 0.5,
+      "mrr": 1.0,
+      "retrieved": [
+        "rule-02-urgent",
+        "rule-03-urgent",
+        "rule-08-urgent",
+        "rule-01-urgent",
+        "rule-16-urgent"
+      ],
+      "expected": [
+        "rule-02-amount",
+        "rule-02-urgent"
+      ],
+      "answer": "根据记忆，POL-02未在提供的规则中明确说明（仅提及POL-01、POL-02、POL-03、POL-08、POL-16，但仅有[rule-02-urgent]标签，内容为“POL-02规定：紧急采购仍须至少提供4家供应商报价”）。\n\n因此，按POL-02执行紧急采购，需准备**至少4家供应商报价**。\n\n但关于“需要谁审批”，现有记忆中**未提供任何POL-02或其他规则中涉及审批权限或审批人信息**。\n\n答案：需准备**4家报价**；**根据现有记忆无法确定审批人**。",
+      "faithfulness": 1.0,
+      "unsupported_claims": [],
+      "retrieval_latency_ms": 230.89608398731798,
+      "generation_latency_ms": 3578.425082960166,
+      "response_latency_ms": 3809.321166947484,
+      "judge_latency_ms": 3133.653917000629
+    },
+    {
+      "case_id": "rule-03-a",
+      "bucket": "business_rule_qa",
+      "recall_at_5": 0.5,
+      "mrr": 1.0,
+      "retrieved": [
+        "rule-03-urgent",
+        "rule-01-urgent",
+        "rule-04-urgent",
+        "rule-07-urgent",
+        "rule-02-urgent"
+      ],
+      "expected": [
+        "rule-03-amount",
+        "rule-03-urgent"
+      ],
+      "answer": "根据记忆，POL-03规定紧急采购须至少提供**2家供应商报价**；但记忆中未提及POL-03下5300元紧急采购的具体审批人。\n\n因此：  \n- **需准备2家报价**；  \n- **审批人无法确定**（根据现有记忆无法确定）。",
+      "faithfulness": 1.0,
+      "unsupported_claims": [],
+      "retrieval_latency_ms": 308.0510420259088,
+      "generation_latency_ms": 1972.7296250639483,
+      "response_latency_ms": 2280.780667089857,
+      "judge_latency_ms": 2317.259583971463
+    },
+    {
+      "case_id": "rule-04-a",
+      "bucket": "business_rule_qa",
+      "recall_at_5": 0.5,
+      "mrr": 1.0,
+      "retrieved": [
+        "rule-04-urgent",
+        "rule-02-urgent",
+        "rule-03-urgent",
+        "rule-05-urgent",
+        "rule-09-urgent"
+      ],
+      "expected": [
+        "rule-04-amount",
+        "rule-04-urgent"
+      ],
+      "answer": "根据记忆，POL-04未在提供的规则中列出（[rule-04-urgent] 仅提及“POL-04规定：紧急采购仍须至少提供3家供应商报价”，但该条目标签为 rule-04-urgent，内容实际对应 POL-04）。\n\n因此，按 POL-04 执行紧急采购，需准备**至少3家供应商报价**。\n\n关于审批人，所有提供的记忆条目均未提及 POL-04 或任何紧急采购的审批权限或审批人信息。\n\n✅ 报价家数：**3家**  \n❌ 审批人：**根据现有记忆无法确定**",
+      "faithfulness": 1.0,
+      "unsupported_claims": [],
+      "retrieval_latency_ms": 249.2839170154184,
+      "generation_latency_ms": 3348.0645840754732,
+      "response_latency_ms": 3597.3485010908917,
+      "judge_latency_ms": 3416.067250072956
+    },
+    {
+      "case_id": "rule-05-a",
+      "bucket": "business_rule_qa",
+      "recall_at_5": 0.5,
+      "mrr": 1.0,
+      "retrieved": [
+        "rule-05-urgent",
+        "rule-01-urgent",
+        "rule-03-urgent",
+        "rule-09-urgent",
+        "rule-04-urgent"
+      ],
+      "expected": [
+        "rule-05-amount",
+        "rule-05-urgent"
+      ],
+      "answer": "根据记忆，POL-05对应规则为：[rule-05-urgent] POL-05规定：紧急采购仍须至少提供4家供应商报价。\n\n但记忆中未提及POL-05下6300元紧急采购的审批人信息。\n\n因此：  \n- 需准备**至少4家报价**；  \n- **审批人无法确定**（根据现有记忆无法确定）。",
+      "faithfulness": 1.0,
+      "unsupported_claims": [],
+      "retrieval_latency_ms": 224.12195801734924,
+      "generation_latency_ms": 2269.3134589353576,
+      "response_latency_ms": 2493.435416952707,
+      "judge_latency_ms": 2262.94849999249
+    },
+    {
+      "case_id": "rule-07-a",
+      "bucket": "business_rule_qa",
+      "recall_at_5": 0.5,
+      "mrr": 1.0,
+      "retrieved": [
+        "rule-07-urgent",
+        "rule-03-urgent",
+        "rule-01-urgent",
+        "rule-09-urgent",
+        "rule-02-urgent"
+      ],
+      "expected": [
+        "rule-07-amount",
+        "rule-07-urgent"
+      ],
+      "answer": "根据记忆，POL-07对应规则为：[rule-07-urgent] POL-07规定：紧急采购仍须至少提供3家供应商报价。\n\n但记忆中未提及POL-07关于审批权限的信息。\n\n因此：  \n- 需准备**至少3家报价**；  \n- **审批人信息根据现有记忆无法确定**。",
+      "faithfulness": 1.0,
+      "unsupported_claims": [],
+      "retrieval_latency_ms": 203.87241698335856,
+      "generation_latency_ms": 2016.5505839977413,
+      "response_latency_ms": 2220.4230009811,
+      "judge_latency_ms": 1659.9822079297155
+    },
+    {
+      "case_id": "rule-08-a",
+      "bucket": "business_rule_qa",
+      "recall_at_5": 0.5,
+      "mrr": 1.0,
+      "retrieved": [
+        "rule-08-urgent",
+        "rule-09-urgent",
+        "rule-03-urgent",
+        "rule-02-urgent",
+        "rule-01-urgent"
+      ],
+      "expected": [
+        "rule-08-amount",
+        "rule-08-urgent"
+      ],
+      "answer": "根据记忆，POL-08对应规则为：[rule-08-urgent] POL-08规定：紧急采购仍须至少提供4家供应商报价。\n\n但记忆中未提及POL-08对审批人（如部门负责人、财务、高管等）的要求。\n\n因此：  \n- 需准备**至少4家报价**；  \n- **审批人信息无法从现有记忆中确定**。\n\n答案：需准备至少4家报价；根据现有记忆无法确定审批人。",
+      "faithfulness": 1.0,
+      "unsupported_claims": [],
+      "retrieval_latency_ms": 231.1243750154972,
+      "generation_latency_ms": 2636.199290980585,
+      "response_latency_ms": 2867.323665996082,
+      "judge_latency_ms": 2438.2203749846667
+    },
+    {
+      "case_id": "rule-09-a",
+      "bucket": "business_rule_qa",
+      "recall_at_5": 0.5,
+      "mrr": 1.0,
+      "retrieved": [
+        "rule-09-urgent",
+        "rule-03-urgent",
+        "rule-08-urgent",
+        "rule-02-urgent",
+        "rule-01-urgent"
+      ],
+      "expected": [
+        "rule-09-amount",
+        "rule-09-urgent"
+      ],
+      "answer": "根据记忆，POL-09对应规则为：[rule-09-urgent] POL-09规定：紧急采购仍须至少提供2家供应商报价。\n\n但记忆中未提及POL-09对审批人的要求。\n\n因此：  \n- 需准备**至少2家**供应商报价；  \n- **审批人信息无法确定**（根据现有记忆无法确定）。",
+      "faithfulness": 1.0,
+      "unsupported_claims": [],
+      "retrieval_latency_ms": 243.50400001276284,
+      "generation_latency_ms": 2160.276041016914,
+      "response_latency_ms": 2403.780041029677,
+      "judge_latency_ms": 2011.2716669682413
+    },
+    {
+      "case_id": "rule-10-a",
+      "bucket": "business_rule_qa",
+      "recall_at_5": 0.5,
+      "mrr": 1.0,
+      "retrieved": [
+        "rule-10-urgent",
+        "rule-01-urgent",
+        "rule-08-urgent",
+        "rule-09-urgent",
+        "rule-18-urgent"
+      ],
+      "expected": [
+        "rule-10-amount",
+        "rule-10-urgent"
+      ],
+      "answer": "根据记忆，POL-10未在提供的规则中出现（仅有POL-01、POL-08、POL-09、POL-18的紧急采购报价要求）。  \n因此，**根据现有记忆无法确定**POL-10对报价家数的要求及审批人。",
+      "faithfulness": 1.0,
+      "unsupported_claims": [],
+      "retrieval_latency_ms": 277.95954199973494,
+      "generation_latency_ms": 1695.0940829701722,
+      "response_latency_ms": 1973.053624969907,
+      "judge_latency_ms": 916.8478329665959
+    },
+    {
+      "case_id": "rule-11-a",
+      "bucket": "business_rule_qa",
+      "recall_at_5": 0.5,
+      "mrr": 1.0,
+      "retrieved": [
+        "rule-11-urgent",
+        "rule-01-urgent",
+        "rule-03-urgent",
+        "rule-10-urgent",
+        "rule-15-urgent"
+      ],
+      "expected": [
+        "rule-11-amount",
+        "rule-11-urgent"
+      ],
+      "answer": "根据记忆，POL-11规定紧急采购须至少提供**4家供应商报价**。  \n但记忆中**未提及POL-11下审批人信息**，因此无法确定需由谁审批。\n\n答案：需准备**4家报价**；审批人**根据现有记忆无法确定**。",
+      "faithfulness": 1.0,
+      "unsupported_claims": [],
+      "retrieval_latency_ms": 230.9013339690864,
+      "generation_latency_ms": 1938.8649170286953,
+      "response_latency_ms": 2169.7662509977818,
+      "judge_latency_ms": 2090.7728750025854
+    },
+    {
+      "case_id": "rule-13-a",
+      "bucket": "business_rule_qa",
+      "recall_at_5": 0.5,
+      "mrr": 1.0,
+      "retrieved": [
+        "rule-13-urgent",
+        "rule-01-urgent",
+        "rule-15-urgent",
+        "rule-03-urgent",
+        "rule-10-urgent"
+      ],
+      "expected": [
+        "rule-13-amount",
+        "rule-13-urgent"
+      ],
+      "answer": "根据记忆，POL-13（对应规则 [rule-13-urgent]）规定：紧急采购仍须至少提供**3家供应商报价**。\n\n但记忆中**未提及POL-13下审批人信息**。\n\n因此：  \n- 需准备**3家报价**；  \n- 审批人：**根据现有记忆无法确定**。",
+      "faithfulness": 1.0,
+      "unsupported_claims": [],
+      "retrieval_latency_ms": 229.73187500610948,
+      "generation_latency_ms": 2045.858916011639,
+      "response_latency_ms": 2275.5907910177484,
+      "judge_latency_ms": 1882.542458944954
+    },
+    {
+      "case_id": "rule-14-a",
+      "bucket": "business_rule_qa",
+      "recall_at_5": 0.5,
+      "mrr": 1.0,
+      "retrieved": [
+        "rule-14-urgent",
+        "rule-15-urgent",
+        "rule-08-urgent",
+        "rule-02-urgent",
+        "rule-10-urgent"
+      ],
+      "expected": [
+        "rule-14-amount",
+        "rule-14-urgent"
+      ],
+      "answer": "根据记忆，POL-14对应规则为：[rule-14-urgent] POL-14规定：紧急采购仍须至少提供4家供应商报价。\n\n但记忆中未提及POL-14对审批人的要求（即“需要谁审批”）。\n\n因此：\n\n- 需准备**至少4家报价**；  \n- **审批人信息无法确定**（根据现有记忆无法确定）。",
+      "faithfulness": 1.0,
+      "unsupported_claims": [],
+      "retrieval_latency_ms": 218.30187493469566,
+      "generation_latency_ms": 2286.998333991505,
+      "response_latency_ms": 2505.300208926201,
+      "judge_latency_ms": 1838.4036669740453
+    },
+    {
+      "case_id": "rule-15-a",
+      "bucket": "business_rule_qa",
+      "recall_at_5": 0.5,
+      "mrr": 1.0,
+      "retrieved": [
+        "rule-15-urgent",
+        "rule-01-urgent",
+        "rule-03-urgent",
+        "rule-19-urgent",
+        "rule-02-urgent"
+      ],
+      "expected": [
+        "rule-15-amount",
+        "rule-15-urgent"
+      ],
+      "answer": "根据记忆，POL-15对应规则为：[rule-15-urgent] POL-15规定：紧急采购仍须至少提供2家供应商报价。\n\n但记忆中未提及POL-15对审批权限的要求（即“需要谁审批”）。\n\n因此：\n\n- 需准备**至少2家报价**；  \n- **审批人信息无法确定**（根据现有记忆无法确定）。",
+      "faithfulness": 1.0,
+      "unsupported_claims": [],
+      "retrieval_latency_ms": 231.95570800453424,
+      "generation_latency_ms": 2422.1776250051335,
+      "response_latency_ms": 2654.1333330096677,
+      "judge_latency_ms": 1973.0348329758272
+    },
+    {
+      "case_id": "rule-16-a",
+      "bucket": "business_rule_qa",
+      "recall_at_5": 0.5,
+      "mrr": 1.0,
+      "retrieved": [
+        "rule-16-urgent",
+        "rule-08-urgent",
+        "rule-02-urgent",
+        "rule-09-urgent",
+        "rule-03-urgent"
+      ],
+      "expected": [
+        "rule-16-amount",
+        "rule-16-urgent"
+      ],
+      "answer": "根据记忆，POL-16对应规则为[rule-16-urgent]，明确要求：**紧急采购仍须至少提供3家供应商报价**。\n\n但记忆中**未提及POL-16下审批人信息**。\n\n因此：  \n- 报价家数：**至少3家**；  \n- 审批人：**根据现有记忆无法确定**。",
+      "faithfulness": 1.0,
+      "unsupported_claims": [],
+      "retrieval_latency_ms": 222.57191606331617,
+      "generation_latency_ms": 2138.5687079746276,
+      "response_latency_ms": 2361.140624037944,
+      "judge_latency_ms": 1959.5517909619957
+    },
+    {
+      "case_id": "rule-17-a",
+      "bucket": "business_rule_qa",
+      "recall_at_5": 0.5,
+      "mrr": 1.0,
+      "retrieved": [
+        "rule-17-urgent",
+        "rule-03-urgent",
+        "rule-15-urgent",
+        "rule-01-urgent",
+        "rule-10-urgent"
+      ],
+      "expected": [
+        "rule-17-amount",
+        "rule-17-urgent"
+      ],
+      "answer": "根据记忆，POL-17对应规则为[rule-17-urgent]，规定紧急采购须至少提供**4家供应商报价**。\n\n但记忆中**未提及POL-17对审批人的要求**，也无其他规则说明该金额（12300元）对应的审批层级。\n\n因此：  \n- 需准备**4家报价**；  \n- **审批人无法确定**（根据现有记忆无法确定）。",
+      "faithfulness": 1.0,
+      "unsupported_claims": [],
+      "retrieval_latency_ms": 677.8439169283956,
+      "generation_latency_ms": 2408.985707908869,
+      "response_latency_ms": 3086.8296248372644,
+      "judge_latency_ms": 2427.0762919913977
+    },
+    {
+      "case_id": "rule-18-a",
+      "bucket": "business_rule_qa",
+      "recall_at_5": 0.5,
+      "mrr": 1.0,
+      "retrieved": [
+        "rule-18-urgent",
+        "rule-01-urgent",
+        "rule-16-urgent",
+        "rule-10-urgent",
+        "rule-08-urgent"
+      ],
+      "expected": [
+        "rule-18-amount",
+        "rule-18-urgent"
+      ],
+      "answer": "根据记忆，POL-18规定紧急采购须至少提供**2家供应商报价**（见[rule-18-urgent]）。\n\n但记忆中**未提及POL-18下12800元紧急采购的具体审批人**。\n\n因此：  \n- 需准备**2家报价**；  \n- 审批人：**根据现有记忆无法确定**。",
+      "faithfulness": 1.0,
+      "unsupported_claims": [],
+      "retrieval_latency_ms": 304.27149997558445,
+      "generation_latency_ms": 2462.9732090979815,
+      "response_latency_ms": 2767.244709073566,
+      "judge_latency_ms": 2106.8931249901652
+    },
+    {
+      "case_id": "rule-19-a",
+      "bucket": "business_rule_qa",
+      "recall_at_5": 0.5,
+      "mrr": 1.0,
+      "retrieved": [
+        "rule-19-urgent",
+        "rule-01-urgent",
+        "rule-10-urgent",
+        "rule-03-urgent",
+        "rule-09-urgent"
+      ],
+      "expected": [
+        "rule-19-amount",
+        "rule-19-urgent"
+      ],
+      "answer": "根据记忆，POL-19（[rule-19-urgent]）规定：紧急采购仍须至少提供3家供应商报价。  \n但记忆中未提及POL-19下该金额（13300元）对应的审批人。  \n\n因此：  \n- 需准备**3家报价**；  \n- **审批人无法确定**（根据现有记忆无法确定）。",
+      "faithfulness": 1.0,
+      "unsupported_claims": [],
+      "retrieval_latency_ms": 248.60262498259544,
+      "generation_latency_ms": 2265.908750006929,
+      "response_latency_ms": 2514.5113749895245,
+      "judge_latency_ms": 1358.0499170348048
+    },
+    {
+      "case_id": "rule-20-a",
+      "bucket": "business_rule_qa",
+      "recall_at_5": 0.5,
+      "mrr": 1.0,
+      "retrieved": [
+        "rule-20-urgent",
+        "rule-10-urgent",
+        "rule-15-urgent",
+        "rule-16-urgent",
+        "rule-09-urgent"
+      ],
+      "expected": [
+        "rule-20-amount",
+        "rule-20-urgent"
+      ],
+      "answer": "根据记忆，POL-20对应规则为：[rule-20-urgent] POL-20规定：紧急采购仍须至少提供4家供应商报价。\n\n但记忆中未提及POL-20对审批人的要求（即“需要谁审批”）。\n\n因此：\n\n- 需准备**至少4家报价**；  \n- **审批人信息无法确定**（根据现有记忆无法确定）。",
+      "faithfulness": 1.0,
+      "unsupported_claims": [],
+      "retrieval_latency_ms": 232.76462499052286,
+      "generation_latency_ms": 2259.949458995834,
+      "response_latency_ms": 2492.714083986357,
+      "judge_latency_ms": 2084.101666114293
+    }
+  ]
+}

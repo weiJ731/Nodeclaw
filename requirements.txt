@@ -1,0 +1,48 @@
+# Nodeclaw 核心依赖
+# 安装：pip install -r requirements.txt
+
+# CLI 交互
+typer>=0.9.0
+questionary>=2.0.0
+rich>=13.0.0
+prompt_toolkit>=3.0.0
+
+# 环境配置
+python-dotenv>=1.0.0
+
+# LangChain 生态
+langchain-core>=0.2.0
+langgraph>=0.1.0
+langchain>=0.2.0
+langchain-openai>=0.1.0
+langchain-anthropic>=0.1.0
+langchain-community>=0.2.0
+
+# LLM 提供商 SDK
+openai>=1.0.0
+anthropic>=0.18.0
+dashscope>=1.20.0
+
+# 数据存储与异步任务
+pymongo>=4.11.0
+langgraph-checkpoint-mongodb>=0.2.0
+qdrant-client>=1.15.0,<1.17.0
+redis>=5.2.0
+celery[redis]>=5.5.0
+
+# Web API
+fastapi>=0.110.0
+uvicorn>=0.27.0
+
+# Memory V3 中文稀疏检索
+jieba>=0.42.1
+
+# 身份认证
+PyJWT>=2.10.0
+pwdlib[argon2]>=0.3.0
+
+# Benchmark
+tiktoken>=0.9.0
+
+# 工具支持
+pydantic>=2.0.0

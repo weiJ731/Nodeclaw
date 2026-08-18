@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="280" viewBox="0 0 960 280" role="img" aria-labelledby="title desc">
+  <title id="title">Nodeclaw Logo</title>
+  <desc id="desc">Nodeclaw wordmark with a geometric N mark.</desc>
+  <rect width="960" height="280" rx="28" fill="#10110f"/>
+  <g transform="translate(64 54)">
+    <rect x="0" y="0" width="172" height="172" rx="24" fill="#0f766e"/>
+    <path d="M44 130V42h26l34 48V42h26v88h-26L70 82v48H44z" fill="#f8fffb"/>
+    <path d="M34 150h104" stroke="#5eead4" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <g fill="#f8fffb" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif">
+    <text x="270" y="132" font-size="76" font-weight="800" letter-spacing="0">Nodeclaw</text>
+    <text x="274" y="178" font-size="24" font-weight="500" fill="#9ca3af" letter-spacing="3">TRANSPARENT AGENT CONSOLE</text>
+  </g>
+  <path d="M274 206h506" stroke="#0f766e" stroke-width="4" stroke-linecap="round"/>
+</svg>
